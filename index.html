@@ -1,9 +1,840 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My Website</title>
-  </head>
-  <body>
-    <h1>Hello from Mac!</h1>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADHD Life Coaching UK | Holistic Support for ADHD Adults | Intentional Wellbeing</title>
+    <meta name="description" content="ADHD life coaching with lived experience. Holistic support combining yoga, nutrition & energy healing. Build executive function, emotional regulation & focus.">
+    <meta name="keywords" content="ADHD coaching UK, ADHD life coach, holistic ADHD support, yoga for ADHD, ADHD nutrition, executive function coaching">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #fefefe;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #6b73ff;
+            text-decoration: none;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></svg>') repeat;
+            background-size: 30px 30px;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .white-button {
+            background: white;
+            color: #6b73ff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s ease;
+            margin: 0 0.5rem;
+        }
+        
+        .white-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .outline-button {
+            background: transparent;
+            color: white;
+            padding: 15px 30px;
+            border: 2px solid white;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin: 0 0.5rem;
+        }
+        
+        .outline-button:hover {
+            background: white;
+            color: #6b73ff;
+        }
+        
+        /* Problem Section */
+        .problem-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .problem-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .problem-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .problem-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #e9ecef;
+            position: relative;
+            padding-left: 3rem;
+            font-size: 1.1rem;
+        }
+        
+        .problem-list li::before {
+            content: '😓';
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+        }
+        
+        .solution-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+        }
+        
+        .solution-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Approach Section */
+        .approach-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .approach-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .approach-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .approach-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .approach-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .approach-card p {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        
+        /* Benefits Section */
+        .benefits-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+        
+        .benefits-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .benefits-list {
+            list-style: none;
+        }
+        
+        .benefits-list li {
+            padding: 1rem 0;
+            position: relative;
+            padding-left: 3rem;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .benefits-list li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+        }
+        
+        .personal-story {
+            background: rgba(255,255,255,0.9);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .personal-story h3 {
+            color: #6b73ff;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .personal-story p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        
+        .personal-story strong {
+            color: #2c3e50;
+        }
+        
+        /* Packages Section */
+        .packages-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .package-card {
+            background: white;
+            border: 2px solid #f8f9fa;
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .package-card.featured {
+            border-color: #6b73ff;
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .package-badge {
+            background: #6b73ff;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .package-card.featured .package-badge {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .package-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: inherit;
+        }
+        
+        .package-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #6b73ff;
+            margin-bottom: 0.5rem;
+        }
+        
+        .package-card.featured .package-price {
+            color: white;
+        }
+        
+        .package-duration {
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+        
+        .package-card.featured .package-duration {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .package-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+        
+        .package-features li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .package-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        .package-card.featured .package-features li::before {
+            color: white;
+        }
+        
+        .package-button {
+            background: #6b73ff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .package-card.featured .package-button {
+            background: white;
+            color: #6b73ff;
+        }
+        
+        .package-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .faq-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            background: #6b73ff;
+            color: white;
+            padding: 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: #5a63e8;
+        }
+        
+        .faq-answer {
+            padding: 1.5rem;
+            color: #2c3e50;
+            line-height: 1.7;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-content a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-content a:hover {
+            color: white;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero-stats {
+                gap: 1.5rem;
+            }
+            
+            .problem-content,
+            .benefits-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .package-card.featured {
+                transform: none;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .white-button,
+            .outline-button {
+                margin: 0.5rem 0;
+                width: 80%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">Intentional Wellbeing</a>
+            <a href="#book" class="cta-button">Book Discovery Call</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>ADHD Life Coaching That Gets Your Brain</h1>
+                    <p class="subtitle">Finally, support from someone who truly understands. Combine lived ADHD experience with proven holistic practices to build the life you actually want.</p>
+                    
+                    <div style="margin: 2rem 0;">
+                        <a href="#book" class="white-button">Book Free Discovery Call</a>
+                        <a href="#guide" class="outline-button">Get ADHD Wellness Guide</a>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Years Personal ADHD Journey</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">Holistic Modalities</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Understanding & Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="problem-section">
+            <div class="container">
+                <div class="problem-content">
+                    <div>
+                        <h2>Does This Sound Familiar?</h2>
+                        <ul class="problem-list">
+                            <li>You've tried productivity systems that work for everyone else but leave you feeling more overwhelmed</li>
+                            <li>Traditional therapy feels like it misses the mark—they don't really get how your ADHD brain works</li>
+                            <li>You're tired of masking and want to work WITH your neurodivergence, not against it</li>
+                            <li>Executive function challenges make daily life feel like an uphill battle</li>
+                            <li>Emotional regulation feels impossible, especially when you're overwhelmed</li>
+                            <li>You know you're capable of amazing things, but can't seem to create sustainable systems</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="solution-box">
+                        <h3>You're Not Broken. You Just Need the Right Support.</h3>
+                        <p>ADHD coaching with someone who's been there, combined with holistic practices that actually calm your nervous system and support your unique brain.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="approach-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>My Holistic ADHD Approach</h2>
+                    <p>Four powerful modalities working together to support your ADHD brain in ways traditional coaching can't</p>
+                </div>
+                
+                <div class="approach-grid">
+                    <div class="approach-card">
+                        <span class="approach-icon">🧠</span>
+                        <h3>ADHD Life Coaching</h3>
+                        <p>Practical strategies for executive function, time management, and emotional regulation—designed specifically for how ADHD brains work.</p>
+                    </div>
+                    
+                    <div class="approach-card">
+                        <span class="approach-icon">🧘‍♀️</span>
+                        <h3>ADHD-Friendly Yoga</h3>
+                        <p>Movement practices that improve focus, reduce hyperactivity, and help regulate your nervous system naturally.</p>
+                    </div>
+                    
+                    <div class="approach-card">
+                        <span class="approach-icon">🥗</span>
+                        <h3>Brain-Supporting Nutrition</h3>
+                        <p>Targeted nutritional support for focus, mood stability, and sustained energy—addressing ADHD-specific challenges.</p>
+                    </div>
+                    
+                    <div class="approach-card">
+                        <span class="approach-icon">⚡</span>
+                        <h3>Reiki & Sound Healing</h3>
+                        <p>Energy work and sound therapy to reduce overwhelm, calm racing thoughts, and restore nervous system balance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <div class="container">
+                <div class="benefits-content">
+                    <div>
+                        <h2>What You'll Actually Achieve</h2>
+                        <ul class="benefits-list">
+                            <li>Build executive function skills that actually stick long-term</li>
+                            <li>Create sustainable routines that work with your natural ADHD patterns</li>
+                            <li>Develop emotional regulation without suppressing who you are</li>
+                            <li>Improve focus using movement, breathwork, and mindfulness</li>
+                            <li>Reduce overwhelm through nervous system support</li>
+                            <li>Design systems that celebrate your neurodivergent strengths</li>
+                            <li>Feel confident advocating for your needs in all areas of life</li>
+                            <li>Transform your relationship with your ADHD from struggle to strength</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="personal-story">
+                        <h3>Why I'm Different</h3>
+                        <p><strong>I don't have formal coaching certification—and that might be exactly what you need.</strong></p>
+                        <p>What I have is over a decade of lived ADHD experience, plus years of discovering which holistic practices actually work for neurodivergent brains.</p>
+                        <p>I've been where you are. I know what it's like when your brain works differently, when conventional advice falls flat, when you need someone who truly gets it.</p>
+                        <p><strong>My approach combines deep personal understanding with evidence-based holistic practices that have genuinely transformed my own ADHD journey.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="packages-section" id="packages">
+            <div class="container">
+                <div class="section-header">
+                    <h2>ADHD Support Packages</h2>
+                    <p>Comprehensive programs designed to create lasting change, not quick fixes</p>
+                </div>
+                
+                <div class="packages-grid">
+                    <div class="package-card">
+                        <h3>ADHD Foundations</h3>
+                        <div class="package-price">£397</div>
+                        <div class="package-duration">6 weeks</div>
+                        <ul class="package-features">
+                            <li>4 x 60-minute ADHD coaching sessions</li>
+                            <li>2 x ADHD-friendly yoga sessions</li>
+                            <li>Basic brain-supporting nutrition plan</li>
+                            <li>Personalized executive function toolkit</li>
+                            <li>Email support between sessions</li>
+                            <li>ADHD wellness resource library</li>
+                        </ul>
+                        <a href="#book" class="package-button">Get Started</a>
+                    </div>
+                    
+                    <div class="package-card featured">
+                        <div class="package-badge">Most Popular</div>
+                        <h3>ADHD Transformation</h3>
+                        <div class="package-price">£697</div>
+                        <div class="package-duration">12 weeks</div>
+                        <ul class="package-features">
+                            <li>8 x 60-minute ADHD coaching sessions</li>
+                            <li>6 x ADHD-friendly yoga sessions</li>
+                            <li>Comprehensive nutrition consultation & plan</li>
+                            <li>4 x Reiki/sound healing sessions</li>
+                            <li>Custom morning & evening routines</li>
+                            <li>Unlimited email support</li>
+                            <li>Monthly check-in calls for 3 months post-program</li>
+                        </ul>
+                        <a href="#book" class="package-button">Transform Your Life</a>
+                    </div>
+                    
+                    <div class="package-card">
+                        <h3>ADHD Mastery</h3>
+                        <div class="package-price">£1,197</div>
+                        <div class="package-duration">6 months</div>
+                        <ul class="package-features">
+                            <li>12 x 60-minute ADHD coaching sessions</li>
+                            <li>12 x ADHD-friendly yoga sessions</li>
+                            <li>Full nutritional therapy program</li>
+                            <li>8 x Reiki/sound healing sessions</li>
+                            <li>Workplace ADHD advocacy support</li>
+                            <li>Relationship communication strategies</li>
+                            <li>6 months of ongoing support</li>
+                        </ul>
+                        <a href="#book" class="package-button">Master Your ADHD</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Everything you need to know about ADHD coaching with lived experience</p>
+                </div>
+                
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">Do you have formal coaching certification?</div>
+                        <div class="faq-answer">I don't have traditional coaching certification, but I have something potentially more valuable: over 10 years of lived ADHD experience plus professional training in yoga, nutrition therapy, and energy healing. My approach combines deep personal understanding with evidence-based holistic practices.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How is this different from regular ADHD coaching?</div>
+                        <div class="faq-answer">Traditional ADHD coaching often focuses solely on behavioral strategies. My approach addresses the whole person—mind, body, and nervous system—using yoga, nutrition, and energy work alongside practical life skills. Plus, I truly understand what you're going through because I've lived it.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Do I need an ADHD diagnosis to work with you?</div>
+                        <div class="faq-answer">Not necessarily. If you recognize ADHD traits in yourself and are struggling with focus, executive function, or emotional regulation, my holistic approach can be beneficial regardless of formal diagnosis status.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Can you work with me if I'm on ADHD medication?</div>
+                        <div class="faq-answer">Absolutely. My holistic approach complements medical treatment beautifully. I never advise stopping medication—instead, we work on lifestyle factors that can enhance your overall wellbeing alongside any medical support you're receiving.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What if I've tried coaching before and it didn't work?</div>
+                        <div class="faq-answer">Many of my clients have tried traditional coaching without success. The difference is that I understand ADHD from the inside out, and I address the nervous system and whole-body wellness alongside practical strategies. This comprehensive approach often works where others haven't.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Do you offer sessions online or in-person?</div>
+                        <div class="faq-answer">I offer both online and in-person sessions to accommodate your preferences and location. Online sessions work particularly well for ADHD clients as they can be in their comfortable, familiar environment.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta" id="book">
+            <div class="container">
+                <h2>Ready to Transform Your ADHD Experience?</h2>
+                <p>Book a free 30-minute discovery call to explore how holistic ADHD support can work for you. No pressure, just genuine conversation about your journey and goals.</p>
+                
+                <div class="cta-buttons">
+                    <a href="#contact" class="white-button">Book Your Free Discovery Call</a>
+                    <a href="#guide" class="outline-button">Download Free ADHD Guide</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/services">All Services</a>
+                <a href="/blog">Blog</a>
+                <a href="/contact">Contact</a>
+                <a href="/privacy">Privacy</a>
+            </div>
+            <p>&copy; 2025 Intentional Wellbeing. ADHD coaching and holistic wellness in the UK.</p>
+        </div>
+    </footer>
+</body>
 </html>
