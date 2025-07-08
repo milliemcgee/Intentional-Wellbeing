@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADHD Life Coaching UK | Holistic Support for ADHD Adults | Intentional Wellbeing</title>
-    <meta name="description" content="ADHD life coaching with lived experience. Holistic support combining yoga, nutrition & energy healing. Build executive function, emotional regulation & focus.">
-    <meta name="keywords" content="ADHD coaching UK, ADHD life coach, holistic ADHD support, yoga for ADHD, ADHD nutrition, executive function coaching">
+    <title>Holistic Life Coaching UK | Career, Relationships & Personal Growth | Intentional Wellbeing</title>
+    <meta name="description" content="Holistic life coaching combining yoga, nutrition & energy healing. Specializing in neurodivergent support with lived ADHD experience. Transform your career, relationships & wellbeing.">
+    <meta name="keywords" content="holistic life coaching UK, career coaching, relationship coaching, ADHD coaching, yoga therapy, nutrition coaching, energy healing">
     <style>
         * {
             margin: 0;
@@ -103,11 +103,21 @@
         
         .hero .subtitle {
             font-size: 1.3rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
             opacity: 0.9;
+        }
+        
+        .hero .specialty {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.8;
+            font-style: italic;
         }
         
         .hero-stats {
@@ -168,6 +178,82 @@
             color: #6b73ff;
         }
         
+        /* Icon Styles */
+        .icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .icon-light {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Areas of Expertise */
+        .expertise-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .expertise-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .expertise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .expertise-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .expertise-card p {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        
         /* Problem Section */
         .problem-section {
             padding: 80px 0;
@@ -195,10 +281,12 @@
         }
         
         .problem-list li::before {
-            content: '😓';
+            content: '•';
             position: absolute;
             left: 0;
             font-size: 1.5rem;
+            color: #6b73ff;
+            font-weight: bold;
         }
         
         .solution-box {
@@ -220,25 +308,6 @@
             background: white;
         }
         
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-        
-        .section-header p {
-            font-size: 1.1rem;
-            color: #7f8c8d;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
         .approach-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -257,12 +326,6 @@
         .approach-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .approach-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: block;
         }
         
         .approach-card h3 {
@@ -302,10 +365,12 @@
         }
         
         .benefits-list li::before {
-            content: '✨';
+            content: '✓';
             position: absolute;
             left: 0;
             font-size: 1.5rem;
+            color: #27ae60;
+            font-weight: bold;
         }
         
         .personal-story {
@@ -330,20 +395,20 @@
             color: #2c3e50;
         }
         
-        /* Packages Section */
-        .packages-section {
+        /* Services Section */
+        .services-section {
             padding: 80px 0;
             background: white;
         }
         
-        .packages-grid {
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
         
-        .package-card {
+        .service-card {
             background: white;
             border: 2px solid #f8f9fa;
             border-radius: 20px;
@@ -353,87 +418,46 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
-        .package-card:hover {
+        .service-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-        
-        .package-card.featured {
             border-color: #6b73ff;
-            transform: scale(1.05);
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
         }
         
-        .package-badge {
-            background: #6b73ff;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .package-card.featured .package-badge {
-            background: rgba(255,255,255,0.2);
-        }
-        
-        .package-card h3 {
+        .service-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: inherit;
+            color: #2c3e50;
         }
         
-        .package-price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #6b73ff;
-            margin-bottom: 0.5rem;
-        }
-        
-        .package-card.featured .package-price {
-            color: white;
-        }
-        
-        .package-duration {
+        .service-card p {
             color: #7f8c8d;
-            margin-bottom: 2rem;
-            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
         }
         
-        .package-card.featured .package-duration {
-            color: rgba(255,255,255,0.8);
-        }
-        
-        .package-features {
+        .service-features {
             list-style: none;
             margin-bottom: 2rem;
             text-align: left;
         }
         
-        .package-features li {
+        .service-features li {
             padding: 0.5rem 0;
             position: relative;
             padding-left: 2rem;
+            color: #2c3e50;
         }
         
-        .package-features li::before {
-            content: '✓';
+        .service-features li::before {
+            content: '•';
             position: absolute;
             left: 0;
-            color: #27ae60;
+            color: #6b73ff;
             font-weight: bold;
         }
         
-        .package-card.featured .package-features li::before {
-            color: white;
-        }
-        
-        .package-button {
+        .service-button {
             background: #6b73ff;
             color: white;
             padding: 12px 24px;
@@ -446,12 +470,7 @@
             width: 100%;
         }
         
-        .package-card.featured .package-button {
-            background: white;
-            color: #6b73ff;
-        }
-        
-        .package-button:hover {
+        .service-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
@@ -530,26 +549,46 @@
         footer {
             background: #2c3e50;
             color: white;
-            padding: 2rem 0;
+            padding: 3rem 0 2rem;
             text-align: center;
         }
         
         .footer-content {
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            text-align: left;
         }
         
-        .footer-content a {
+        .footer-section h4 {
+            color: #6b73ff;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
             color: #bdc3c7;
             text-decoration: none;
             transition: color 0.3s ease;
         }
         
-        .footer-content a:hover {
+        .footer-section a:hover {
             color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #34495e;
+            padding-top: 2rem;
+            color: #bdc3c7;
         }
         
         /* Mobile Responsiveness */
@@ -564,12 +603,8 @@
                 gap: 2rem;
             }
             
-            .packages-grid {
+            .services-grid {
                 grid-template-columns: 1fr;
-            }
-            
-            .package-card.featured {
-                transform: none;
             }
             
             .cta-buttons {
@@ -581,6 +616,11 @@
             .outline-button {
                 margin: 0.5rem 0;
                 width: 80%;
+                text-align: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
                 text-align: center;
             }
         }
@@ -598,18 +638,19 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1>ADHD Life Coaching That Gets Your Brain</h1>
-                    <p class="subtitle">Finally, support from someone who truly understands. Combine lived ADHD experience with proven holistic practices to build the life you actually want.</p>
+                    <h1>Holistic Life Coaching for Real Life Transformation</h1>
+                    <p class="subtitle">Transform your career, relationships, and wellbeing with a holistic approach combining coaching, yoga, nutrition, and energy healing.</p>
+                    <p class="specialty">Specializing in neurodivergent support with lived ADHD experience</p>
                     
                     <div style="margin: 2rem 0;">
                         <a href="#book" class="white-button">Book Free Discovery Call</a>
-                        <a href="#guide" class="outline-button">Get ADHD Wellness Guide</a>
+                        <a href="#guide" class="outline-button">Get Wellness Guide</a>
                     </div>
                     
                     <div class="hero-stats">
                         <div class="stat">
                             <span class="stat-number">10+</span>
-                            <span class="stat-label">Years Personal ADHD Journey</span>
+                            <span class="stat-label">Areas of Expertise</span>
                         </div>
                         <div class="stat">
                             <span class="stat-number">4</span>
@@ -617,8 +658,67 @@
                         </div>
                         <div class="stat">
                             <span class="stat-number">100%</span>
-                            <span class="stat-label">Understanding & Support</span>
+                            <span class="stat-label">Personalized Support</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="expertise-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Areas of Expertise</h2>
+                    <p>Real experience helping people transform every area of their lives</p>
+                </div>
+                
+                <div class="expertise-grid">
+                    <div class="expertise-card">
+                        <div class="icon">C</div>
+                        <h3>Career & Productivity</h3>
+                        <p>Navigate career transitions, workplace challenges, and build sustainable productivity systems that work with your brain, not against it.</p>
+                    </div>
+                    
+                    <div class="expertise-card">
+                        <div class="icon">R</div>
+                        <h3>Marriage & Relationships</h3>
+                        <p>Improve communication, emotional connection, and navigate relationship challenges with greater understanding and compassion.</p>
+                    </div>
+                    
+                    <div class="expertise-card">
+                        <div class="icon">M</div>
+                        <h3>Mental Health & Wellbeing</h3>
+                        <p>Build resilience, manage stress, and create sustainable mental health practices that support your unique needs.</p>
+                    </div>
+                    
+                    <div class="expertise-card">
+                        <div class="icon">L</div>
+                        <h3>Lifestyle & Spirituality</h3>
+                        <p>Create meaning, balance, and spiritual connection in daily life while honoring your authentic self.</p>
+                    </div>
+                    
+                    <div class="expertise-card">
+                        <div class="icon">H</div>
+                        <h3>Health & Fitness</h3>
+                        <p>Develop sustainable wellness habits, improve your relationship with food, and create movement practices you actually enjoy.</p>
+                    </div>
+                    
+                    <div class="expertise-card">
+                        <div class="icon">S</div>
+                        <h3>Confidence & Self-Esteem</h3>
+                        <p>Build genuine confidence, overcome limiting beliefs, and develop unshakeable self-worth beyond external validation.</p>
+                    </div>
+                    
+                    <div class="expertise-card">
+                        <div class="icon">U</div>
+                        <h3>Feeling Stuck</h3>
+                        <p>Break through barriers, clarify your direction, and create momentum toward the life you actually want to live.</p>
+                    </div>
+                    
+                    <div class="expertise-card">
+                        <div class="icon">I</div>
+                        <h3>Sexuality & Identity</h3>
+                        <p>Explore and embrace your authentic self, navigate identity questions, and create healthy relationships with yourself and others.</p>
                     </div>
                 </div>
             </div>
@@ -630,18 +730,18 @@
                     <div>
                         <h2>Does This Sound Familiar?</h2>
                         <ul class="problem-list">
-                            <li>You've tried productivity systems that work for everyone else but leave you feeling more overwhelmed</li>
-                            <li>Traditional therapy feels like it misses the mark—they don't really get how your ADHD brain works</li>
-                            <li>You're tired of masking and want to work WITH your neurodivergence, not against it</li>
-                            <li>Executive function challenges make daily life feel like an uphill battle</li>
-                            <li>Emotional regulation feels impossible, especially when you're overwhelmed</li>
-                            <li>You know you're capable of amazing things, but can't seem to create sustainable systems</li>
+                            <li>You've tried conventional approaches that work for others but leave you feeling more frustrated</li>
+                            <li>Traditional therapy or coaching feels like it misses something crucial about how you work</li>
+                            <li>You're tired of one-size-fits-all solutions and want personalized support</li>
+                            <li>You feel stuck in patterns that aren't serving you but can't seem to break free</li>
+                            <li>You know you're capable of more but struggle to create sustainable change</li>
+                            <li>You want to work with someone who truly understands your unique challenges</li>
                         </ul>
                     </div>
                     
                     <div class="solution-box">
-                        <h3>You're Not Broken. You Just Need the Right Support.</h3>
-                        <p>ADHD coaching with someone who's been there, combined with holistic practices that actually calm your nervous system and support your unique brain.</p>
+                        <h3>You Need Support That Actually Gets You</h3>
+                        <p>Holistic life coaching that addresses the whole person - mind, body, and spirit - with someone who understands what it's like to navigate life's challenges from personal experience.</p>
                     </div>
                 </div>
             </div>
@@ -650,33 +750,33 @@
         <section class="approach-section">
             <div class="container">
                 <div class="section-header">
-                    <h2>My Holistic ADHD Approach</h2>
-                    <p>Four powerful modalities working together to support your ADHD brain in ways traditional coaching can't</p>
+                    <h2>My Holistic Approach</h2>
+                    <p>Four powerful modalities working together to create lasting transformation</p>
                 </div>
                 
                 <div class="approach-grid">
                     <div class="approach-card">
-                        <span class="approach-icon">🧠</span>
-                        <h3>ADHD Life Coaching</h3>
-                        <p>Practical strategies for executive function, time management, and emotional regulation—designed specifically for how ADHD brains work.</p>
+                        <div class="icon">LC</div>
+                        <h3>Life Coaching</h3>
+                        <p>Practical strategies for goal-setting, habit formation, and personal growth tailored to your unique brain and life circumstances.</p>
                     </div>
                     
                     <div class="approach-card">
-                        <span class="approach-icon">🧘‍♀️</span>
-                        <h3>ADHD-Friendly Yoga</h3>
-                        <p>Movement practices that improve focus, reduce hyperactivity, and help regulate your nervous system naturally.</p>
+                        <div class="icon">Y</div>
+                        <h3>Yoga & Movement</h3>
+                        <p>Embodied practices that improve focus, reduce stress, and help you reconnect with your body's wisdom.</p>
                     </div>
                     
                     <div class="approach-card">
-                        <span class="approach-icon">🥗</span>
-                        <h3>Brain-Supporting Nutrition</h3>
-                        <p>Targeted nutritional support for focus, mood stability, and sustained energy—addressing ADHD-specific challenges.</p>
+                        <div class="icon">N</div>
+                        <h3>Nutrition & Lifestyle</h3>
+                        <p>Personalized nutrition guidance and lifestyle changes that support your energy, mood, and overall wellbeing.</p>
                     </div>
                     
                     <div class="approach-card">
-                        <span class="approach-icon">⚡</span>
+                        <div class="icon">E</div>
                         <h3>Reiki & Sound Healing</h3>
-                        <p>Energy work and sound therapy to reduce overwhelm, calm racing thoughts, and restore nervous system balance.</p>
+                        <p>Energy work and sound therapy to release blocks, reduce overwhelm, and restore balance to your nervous system.</p>
                     </div>
                 </div>
             </div>
@@ -688,153 +788,82 @@
                     <div>
                         <h2>What You'll Actually Achieve</h2>
                         <ul class="benefits-list">
-                            <li>Build executive function skills that actually stick long-term</li>
-                            <li>Create sustainable routines that work with your natural ADHD patterns</li>
-                            <li>Develop emotional regulation without suppressing who you are</li>
-                            <li>Improve focus using movement, breathwork, and mindfulness</li>
-                            <li>Reduce overwhelm through nervous system support</li>
-                            <li>Design systems that celebrate your neurodivergent strengths</li>
-                            <li>Feel confident advocating for your needs in all areas of life</li>
-                            <li>Transform your relationship with your ADHD from struggle to strength</li>
+                            <li>Navigate career challenges with confidence and clarity</li>
+                            <li>Build stronger, more authentic relationships</li>
+                            <li>Develop sustainable habits that support your wellbeing</li>
+                            <li>Create systems that work with your natural patterns</li>
+                            <li>Improve your relationship with food and movement</li>
+                            <li>Build genuine confidence and self-worth</li>
+                            <li>Break through feelings of being stuck or overwhelmed</li>
+                            <li>Connect with your authentic self and life purpose</li>
+                            <li>Develop resilience and emotional regulation skills</li>
+                            <li>Create the life you actually want, not what others expect</li>
                         </ul>
                     </div>
                     
                     <div class="personal-story">
-                        <h3>Why I'm Different</h3>
-                        <p><strong>I don't have formal coaching certification—and that might be exactly what you need.</strong></p>
-                        <p>What I have is over a decade of lived ADHD experience, plus years of discovering which holistic practices actually work for neurodivergent brains.</p>
-                        <p>I've been where you are. I know what it's like when your brain works differently, when conventional advice falls flat, when you need someone who truly gets it.</p>
-                        <p><strong>My approach combines deep personal understanding with evidence-based holistic practices that have genuinely transformed my own ADHD journey.</strong></p>
+                        <h3>Why My Approach Works</h3>
+                        <p><strong>I bring lived experience to every session.</strong> Over the past decade, I've supported people across all areas of life - career transitions, relationship challenges, mental health struggles, spiritual growth, and everything in between.</p>
+                        <p>What makes me different is my combination of personal understanding with professional training in multiple holistic modalities. I've been where you are, and I've discovered what actually works.</p>
+                        <p><strong>Whether you're neurotypical or neurodivergent, struggling with specific challenges or just feeling stuck, I meet you exactly where you are.</strong> My ADHD experience gives me unique insight into how different brains work, but my approach benefits everyone seeking holistic transformation.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="packages-section" id="packages">
+        <section class="services-section" id="services">
             <div class="container">
                 <div class="section-header">
-                    <h2>ADHD Support Packages</h2>
-                    <p>Comprehensive programs designed to create lasting change, not quick fixes</p>
+                    <h2>Tailored Services</h2>
+                    <p>Every client is unique. Choose the services that resonate with you, or combine them for comprehensive support.</p>
                 </div>
                 
-                <div class="packages-grid">
-                    <div class="package-card">
-                        <h3>ADHD Foundations</h3>
-                        <div class="package-price">£397</div>
-                        <div class="package-duration">6 weeks</div>
-                        <ul class="package-features">
-                            <li>4 x 60-minute ADHD coaching sessions</li>
-                            <li>2 x ADHD-friendly yoga sessions</li>
-                            <li>Basic brain-supporting nutrition plan</li>
-                            <li>Personalized executive function toolkit</li>
-                            <li>Email support between sessions</li>
-                            <li>ADHD wellness resource library</li>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="icon">1:1</div>
+                        <h3>1:1 Holistic Coaching</h3>
+                        <p>Personalized coaching sessions addressing your specific goals and challenges across all areas of life.</p>
+                        <ul class="service-features">
+                            <li>Career transitions and workplace challenges</li>
+                            <li>Relationship and communication skills</li>
+                            <li>Mental health and emotional wellbeing</li>
+                            <li>Personal growth and self-development</li>
+                            <li>ADHD and neurodivergent support</li>
                         </ul>
-                        <a href="#book" class="package-button">Get Started</a>
+                        <a href="#book" class="service-button">Book Consultation</a>
                     </div>
                     
-                    <div class="package-card featured">
-                        <div class="package-badge">Most Popular</div>
-                        <h3>ADHD Transformation</h3>
-                        <div class="package-price">£697</div>
-                        <div class="package-duration">12 weeks</div>
-                        <ul class="package-features">
-                            <li>8 x 60-minute ADHD coaching sessions</li>
-                            <li>6 x ADHD-friendly yoga sessions</li>
-                            <li>Comprehensive nutrition consultation & plan</li>
-                            <li>4 x Reiki/sound healing sessions</li>
-                            <li>Custom morning & evening routines</li>
-                            <li>Unlimited email support</li>
-                            <li>Monthly check-in calls for 3 months post-program</li>
+                    <div class="service-card">
+                        <div class="icon">YT</div>
+                        <h3>Yoga Therapy</h3>
+                        <p>Therapeutic yoga practices tailored to your body and nervous system for healing and balance.</p>
+                        <ul class="service-features">
+                            <li>Stress reduction and anxiety management</li>
+                            <li>Improved focus and concentration</li>
+                            <li>Body awareness and movement</li>
+                            <li>Trauma-informed practices</li>
+                            <li>Breathwork and meditation</li>
                         </ul>
-                        <a href="#book" class="package-button">Transform Your Life</a>
+                        <a href="#book" class="service-button">Start Practice</a>
                     </div>
                     
-                    <div class="package-card">
-                        <h3>ADHD Mastery</h3>
-                        <div class="package-price">£1,197</div>
-                        <div class="package-duration">6 months</div>
-                        <ul class="package-features">
-                            <li>12 x 60-minute ADHD coaching sessions</li>
-                            <li>12 x ADHD-friendly yoga sessions</li>
-                            <li>Full nutritional therapy program</li>
-                            <li>8 x Reiki/sound healing sessions</li>
-                            <li>Workplace ADHD advocacy support</li>
-                            <li>Relationship communication strategies</li>
-                            <li>6 months of ongoing support</li>
+                    <div class="service-card">
+                        <div class="icon">NC</div>
+                        <h3>Nutrition Coaching</h3>
+                        <p>Holistic nutrition guidance that supports your energy, mood, and overall wellbeing.</p>
+                        <ul class="service-features">
+                            <li>Personalized meal planning</li>
+                            <li>Sustainable eating habits</li>
+                            <li>Energy and mood optimization</li>
+                            <li>Digestive health support</li>
+                            <li>Mindful eating practices</li>
                         </ul>
-                        <a href="#book" class="package-button">Master Your ADHD</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="faq-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Frequently Asked Questions</h2>
-                    <p>Everything you need to know about ADHD coaching with lived experience</p>
-                </div>
-                
-                <div class="faq-grid">
-                    <div class="faq-item">
-                        <div class="faq-question">Do you have formal coaching certification?</div>
-                        <div class="faq-answer">I don't have traditional coaching certification, but I have something potentially more valuable: over 10 years of lived ADHD experience plus professional training in yoga, nutrition therapy, and energy healing. My approach combines deep personal understanding with evidence-based holistic practices.</div>
+                        <a href="#book" class="service-button">Transform Eating</a>
                     </div>
                     
-                    <div class="faq-item">
-                        <div class="faq-question">How is this different from regular ADHD coaching?</div>
-                        <div class="faq-answer">Traditional ADHD coaching often focuses solely on behavioral strategies. My approach addresses the whole person—mind, body, and nervous system—using yoga, nutrition, and energy work alongside practical life skills. Plus, I truly understand what you're going through because I've lived it.</div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">Do I need an ADHD diagnosis to work with you?</div>
-                        <div class="faq-answer">Not necessarily. If you recognize ADHD traits in yourself and are struggling with focus, executive function, or emotional regulation, my holistic approach can be beneficial regardless of formal diagnosis status.</div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">Can you work with me if I'm on ADHD medication?</div>
-                        <div class="faq-answer">Absolutely. My holistic approach complements medical treatment beautifully. I never advise stopping medication—instead, we work on lifestyle factors that can enhance your overall wellbeing alongside any medical support you're receiving.</div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">What if I've tried coaching before and it didn't work?</div>
-                        <div class="faq-answer">Many of my clients have tried traditional coaching without success. The difference is that I understand ADHD from the inside out, and I address the nervous system and whole-body wellness alongside practical strategies. This comprehensive approach often works where others haven't.</div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">Do you offer sessions online or in-person?</div>
-                        <div class="faq-answer">I offer both online and in-person sessions to accommodate your preferences and location. Online sessions work particularly well for ADHD clients as they can be in their comfortable, familiar environment.</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="final-cta" id="book">
-            <div class="container">
-                <h2>Ready to Transform Your ADHD Experience?</h2>
-                <p>Book a free 30-minute discovery call to explore how holistic ADHD support can work for you. No pressure, just genuine conversation about your journey and goals.</p>
-                
-                <div class="cta-buttons">
-                    <a href="#contact" class="white-button">Book Your Free Discovery Call</a>
-                    <a href="#guide" class="outline-button">Download Free ADHD Guide</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <a href="/">Home</a>
-                <a href="/about">About</a>
-                <a href="/services">All Services</a>
-                <a href="/blog">Blog</a>
-                <a href="/contact">Contact</a>
-                <a href="/privacy">Privacy</a>
-            </div>
-            <p>&copy; 2025 Intentional Wellbeing. ADHD coaching and holistic wellness in the UK.</p>
-        </div>
-    </footer>
-</body>
-</html>
+                    <div class="service-card">
+                        <div class="icon">EH</div>
+                        <h3>Energy Healing</h3>
+                        <p>Reiki and sound healing to release blocks, reduce overwhelm, and restore natural balance.</p>
+                        <ul class="service-features">
+                            <li>Stress and anxiety relief</li>
