@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holistic Life Coaching Bath, UK | Wellbeing, Relationships, Career & Personal Growth | Intentional Wellbeing</title>
+    <meta name="description" content="Holistic life coaching in Bath combining nutrition, yoga & energy healing. Specialising in neurodivergent support with lived ADHD experience. Transform your wellbeing, health, relationships & career.">
+    <meta name="keywords" content="holistic life coaching UK, career coaching, relationship coaching, ADHD coaching, yoga therapy, nutrition coaching, energy healing, reiki, naturopathy">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #fefefe;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #6b73ff;
+            text-decoration: none;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></svg>') repeat;
+            background-size: 30px 30px;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+        
+        .hero .specialty {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.8;
+            font-style: italic;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .white-button {
+            background: white;
+            color: #6b73ff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s ease;
+            margin: 0 0.5rem;
+        }
+        
+        .white-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .outline-button {
+            background: transparent;
+            color: white;
+            padding: 15px 30px;
+            border: 2px solid white;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin: 0 0.5rem;
+        }
+        
+        .outline-button:hover {
+            background: white;
+            color: #6b73ff;
+        }
+        
+        /* Icon Styles */
+        .icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .icon-light {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Areas of Expertise */
+        .expertise-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .expertise-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .expertise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .expertise-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .expertise-card p {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        
+        /* Problem Section */
+        .problem-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .problem-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .problem-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .problem-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #e9ecef;
+            position: relative;
+            padding-left: 3rem;
+            font-size: 1.1rem;
+        }
+        
+        .problem-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+            color: #6b73ff;
+            font-weight: bold;
+        }
+        
+        .solution-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+        }
+        
+        .solution-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Approach Section */
+        .approach-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .approach-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .approach-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .approach-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .approach-card p {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        
+        /* Benefits Section */
+        .benefits-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+        
+        .benefits-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .benefits-list {
+            list-style: none;
+        }
+        
+        .benefits-list li {
+            padding: 1rem 0;
+            position: relative;
+            padding-left: 3rem;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .benefits-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        .personal-story {
+            background: rgba(255,255,255,0.9);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .personal-story h3 {
+            color: #6b73ff;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .personal-story p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        
+        .personal-story strong {
+            color: #2c3e50;
+        }
+        
+        /* Services Section */
+        .services-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            border: 2px solid #f8f9fa;
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-color: #6b73ff;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .service-card p {
+            color: #7f8c8d;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+        
+        .service-features li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 2rem;
+            color: #2c3e50;
+        }
+        
+        .service-features li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #6b73ff;
+            font-weight: bold;
+        }
+        
+        .service-button {
+            background: #6b73ff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .service-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .faq-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            background: #6b73ff;
+            color: white;
+            padding: 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: #5a63e8;
+        }
+        
+        .faq-answer {
+            padding: 1.5rem;
+            color: #2c3e50;
+            line-height: 1.7;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+        
+        .footer-section h4 {
+            color: #6b73ff;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #34495e;
+            padding-top: 2rem;
+            color: #bdc3c7;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero-stats {
+                gap: 1.5rem;
+            }
+            
+            .problem-content,
+            .benefits-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .white-button,
+            .outline-button {
+                margin: 0.5rem 0;
+                width: 80%;
+                text-align: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">Intentional Wellbeing</a>
+            <a href="#book" class="cta-button">Book Discovery Call</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Holistic Life Coaching for Real Life Transformation</h1>
+                    <p class="subtitle">Transform your wellbeing, relationships & career with a holistic approach combining nutrition, yoga, energy healing & coaching.</p>
+                    <p class="specialty">Specialising in neurodivergent support with lived ADHD experience</p>
+                    
+                    <div style="margin: 2rem 0;">
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Areas of Expertise</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">Holistic Modalities</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Personalised Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="expertise-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Areas of Expertise</h2>
+                    <p>Real experience helping people transform every area of their lives</p>
+                </div>
+                
+                <div class="expertise-grid">
+                    <div class="expertise-card">
+                        <div class="icon">C</div>
+                        <h3>Career & Productivity</h3>
+                        <p>Navigate career transitions, workplace challenges, and build sustainable productivity systems that work with your brain, not against it.</p>
+                    </div>
+                    
+                    <div class="expertise-card">
+                        <div class="icon">R</div>
+                        <h3>Marriage & Relationships</h3>
+                        <p>Improve communication, emotional connection, and navigate relationship challenges with greater understanding and compassion.</p>
+                    </div>
+                    
+                    <div class="expertise-card">
+                        <div class="icon">M</div>
+                        <h3>Mental Health & Wellbeing</h3>
+                        <p>Build resilience, manage stress, and create sustainable mental health practices that support your unique needs.</p>
+                    </div>
+                    
+                    <div class="expertise-card">
+                        <div class="icon">L</div>
+                        <h3>Lifestyle & Spirituality</h3>
+                        <p>Create meaning, balance, and spiritual connection in daily life while honoring your authentic self.</p>
+                    </div>
+                    
+                    <div class="expertise-card">
+                        <div class="icon">H</div>
+                        <h3>Health & Fitness</h3>
+                        <p>Develop sustainable wellness habits, improve your relationship with food, and create movement practices you actually enjoy.</p>
+                    </div>
+                    
+                    <div class="expertise-card">
+                        <div class="icon">S</div>
+                        <h3>Confidence & Self-Esteem</h3>
+                        <p>Build genuine confidence, overcome limiting beliefs, and develop unshakeable self-worth beyond external validation.</p>
+                    </div>
+                    
+                    <div class="expertise-card">
+                        <div class="icon">U</div>
+                        <h3>Feeling Stuck</h3>
+                        <p>Break through barriers, clarify your direction, and create momentum toward the life you actually want to live.</p>
+                    </div>
+                    
+                    <div class="expertise-card">
+                        <div class="icon">I</div>
+                        <h3>Sexuality & Identity</h3>
+                        <p>Explore and embrace your authentic self, navigate identity questions, and create healthy relationships with yourself and others.</p>
+                    </div>
+
+                    <div class="expertise-card">
+                        <div class="icon">O</div>
+                        <h3>Organisation & Life Systems</h3>
+                        <p>Create supportive environments and sustainable systems that reduce overwhelm and help you focus on what truly matters.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="problem-section">
+            <div class="container">
+                <div class="problem-content">
+                    <div>
+                        <h2>Does This Sound Familiar?</h2>
+                        <ul class="problem-list">
+                            <li>You've tried conventional approaches that work for others but leave you feeling more frustrated</li>
+                            <li>Traditional therapy or coaching feels like it misses something crucial about how you work</li>
+                            <li>You're tired of one-size-fits-all solutions and want personalised support</li>
+                            <li>You feel stuck in patterns that aren't serving you but can't seem to break free</li>
+                            <li>You know you're capable of more but struggle to create sustainable change</li>
+                            <li>You want to work with someone who truly understands your unique challenges</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="solution-box">
+                        <h3>You Need Support That Actually Gets You</h3>
+                        <p>Holistic life coaching that addresses the whole person - mind, body, and spirit - with someone who understands what it's like to navigate life's challenges from personal experience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="approach-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>My Holistic Approach</h2>
+                    <p>Four powerful modalities working together to create lasting transformation</p>
+                </div>
+                
+                <div class="approach-grid">
+                    <div class="approach-card">
+                        <div class="icon">LC</div>
+                        <h3>Life Coaching</h3>
+                        <p>Practical strategies for goal-setting, habit formation, and personal growth tailored to your unique brain and life circumstances.</p>
+                    </div>
+                    
+                    <div class="approach-card">
+                        <div class="icon">Y</div>
+                        <h3>Yoga & Movement</h3>
+                        <p>Embodied practices that improve focus, reduce stress, and help you reconnect with your body's wisdom.</p>
+                    </div>
+                    
+                    <div class="approach-card">
+                        <div class="icon">N</div>
+                        <h3>Nutrition & Lifestyle</h3>
+                        <p>Personalised nutrition guidance and lifestyle changes that support your energy, mood, and overall wellbeing.</p>
+                    </div>
+                    
+                    <div class="approach-card">
+                        <div class="icon">E</div>
+                        <h3>Reiki & Sound Healing</h3>
+                        <p>Energy work and sound therapy to release blocks, reduce overwhelm, and restore balance to your nervous system.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <div class="container">
+                <div class="benefits-content">
+                    <div>
+                        <h2>What You'll Actually Achieve</h2>
+                        <ul class="benefits-list">
+                            <li>Navigate career challenges with confidence and clarity</li>
+                            <li>Build stronger, more authentic relationships</li>
+                            <li>Develop sustainable habits that support your wellbeing</li>
+                            <li>Create systems that work with your natural patterns</li>
+                            <li>Improve your relationship with food and movement</li>
+                            <li>Build genuine confidence and self-worth</li>
+                            <li>Break through feelings of being stuck or overwhelmed</li>
+                            <li>Connect with your authentic self and life purpose</li>
+                            <li>Develop resilience and emotional regulation skills</li>
+                            <li>Create the life you actually want, not what others expect</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="personal-story">
+                        <h3>Why My Approach Works</h3>
+                        <p><strong>I bring lived experience to every session.</strong> Over the past decade, I've supported people across all areas of life - career transitions, relationship challenges, mental health struggles, spiritual growth, and everything in between.</p>
+                        <p>What makes me different is my combination of personal understanding with professional training in multiple holistic modalities. I've been where you are, and I've discovered what actually works.</p>
+                        <p><strong>Whether you're neurotypical or neurodivergent, struggling with specific challenges or just feeling stuck, I meet you exactly where you are.</strong> My ADHD experience gives me unique insight into how different brains work, but my approach benefits everyone seeking holistic transformation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Tailored Services</h2>
+                    <p>Every client is unique. Choose the services that resonate with you, or combine them for comprehensive support.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="icon">1:1</div>
+                        <h3>1:1 Holistic Coaching</h3>
+                        <p>Personalised coaching sessions addressing your specific goals and challenges across all areas of life.</p>
+                        <ul class="service-features">
+                            <li>Career transitions and workplace challenges</li>
+                            <li>Relationship and communication skills</li>
+                            <li>Mental health and emotional wellbeing</li>
+                            <li>Personal growth and self-development</li>
+                            <li>ADHD and neurodivergent support</li>
+                        </ul>
+                        <a href="#book" class="service-button">Book Consultation</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="icon">YT</div>
+                        <h3>Yoga Therapy</h3>
+                        <p>Therapeutic yoga practices tailored to your body and nervous system for healing and balance.</p>
+                        <ul class="service-features">
+                            <li>Stress reduction and anxiety management</li>
+                            <li>Improved focus and concentration</li>
+                            <li>Body awareness and movement</li>
+                            <li>Trauma-informed practices</li>
+                            <li>Breathwork and meditation</li>
+                        </ul>
+                        <a href="#book" class="service-button">Start Practice</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="icon">NC</div>
+                        <h3>Nutrition Coaching</h3>
+                        <p>Holistic nutrition guidance that supports your energy, mood, and overall wellbeing.</p>
+                        <ul class="service-features">
+                            <li>Personalised meal planning</li>
+                            <li>Sustainable eating habits</li>
+                            <li>Energy and mood optimisation</li>
+                            <li>Digestive health support</li>
+                            <li>Mindful eating practices</li>
+                        </ul>
+                        <a href="#book" class="service-button">Transform Eating</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="icon">EH</div>
+                        <h3>Energy Healing</h3>
+                        <p>Reiki and sound healing to release blocks, reduce overwhelm, and restore natural balance.</p>
+                        <ul class="service-features">
+                            <li>Stress and anxiety relief</li>
+                            <li>Energy clearing and balancing</li>
+                            <li>Deep relaxation and restoration</li>
+                        </ul>
+                        <a href="#book" class="service-button">Book Session</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Everything you need to know about working together</p>
+                </div>
+                
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">How is holistic coaching different from traditional therapy?</div>
+                        <div class="faq-answer">Holistic coaching addresses the whole person - mind, body, and spirit - using multiple modalities like yoga, nutrition, and energy healing alongside traditional coaching methods. It's action-oriented and focuses on creating sustainable change in all areas of your life.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Do I need to have ADHD to work with you?</div>
+                        <div class="faq-answer">Not at all! While I specialise in neurodivergent support and have lived ADHD experience, my holistic approach benefits everyone. Whether you're neurotypical or neurodivergent, I meet you exactly where you are.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What can I expect from our first session?</div>
+                        <div class="faq-answer">We'll start with a comprehensive assessment of your current situation, goals, and challenges. I'll learn about your unique needs and create a personalised plan combining the most relevant modalities for your transformation.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How long does it typically take to see results?</div>
+                        <div class="faq-answer">Many clients notice shifts within the first few sessions, but lasting transformation typically occurs over 3-6 months of consistent work. Everyone's journey is unique, and we'll adjust our approach based on your progress.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Do you offer online sessions?</div>
+                        <div class="faq-answer">Yes! I offer both in-person and online sessions to accommodate your needs and location. Energy healing and coaching work beautifully over video calls, and I can guide you through yoga practices remotely.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta" id="book">
+            <div class="container">
+                <h2>Ready to Transform Your Life?</h2>
+                <p>Start your journey toward holistic wellbeing with a free discovery call. Let's explore how my unique approach can support your transformation.</p>
+                
+                <div class="cta-buttons">
+                    <a href="mailto:hello@intentionalwellbeing.co.uk?subject=Discovery Call Request" class="white-button">Book Free Discovery Call</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">1:1 Holistic Coaching</a></li>
+                        <li><a href="#services">Yoga</a></li>
+                        <li><a href="#services">Nutritional Therapy</a></li>
+                        <li><a href="#services">Energy Healing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="mailto:millielmcgee@gmail.com">Contact</a></li>
+                        <li><a href="#book">Book Session</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="mailto:millielmcgee@gmail.com">Email</a></li>
+                        <li><a href="tel:+44123456789">+44 7549 955347</a></li>
+                        <li>Bath, England, UK</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                        <li><a href="/terms">Terms of Service</a></li>
+                        <li><a href="/cookies">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Intentional Wellbeing. All rights reserved. | Holistic Life Coaching in Bath, England</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isOpen = answer.style.display === 'block';
+                
+                // Close all other answers
+                document.querySelectorAll('.faq-answer').forEach(ans => {
+                    ans.style.display = 'none';
+                });
+                
+                // Toggle current answer
+                answer.style.display = isOpen ? 'none' : 'block';
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
