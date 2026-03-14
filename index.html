@@ -396,30 +396,31 @@
                 </div>
 
                 <!-- Form -->
-                <form class="contact-form" name="contact" netlify method="POST" data-netlify="true" onsubmit="handleSubmit(event)">
+                <form class="contact-form" name="contact" method="POST" data-netlify="true" onsubmit="handleSubmit(event)">
+                    <input type="hidden" name="form-name" value="contact">
                     <div class="form-row">
                         <div class="field">
                             <label for="name">Full Name</label>
-                            <input type="text" id="name" placeholder="Your name" required>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
                         </div>
                         <div class="field">
                             <label for="email">Email Address</label>
-                            <input type="email" id="email" placeholder="your@email.com" required>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="field">
                             <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" placeholder="07700 000000">
+                            <input type="tel" id="phone" name="phone" placeholder="07700 000000">
                         </div>
                         <div class="field">
                             <label for="postcode">Postcode</label>
-                            <input type="text" id="postcode" placeholder="e.g. BA1 2AB">
+                            <input type="text" id="postcode" name="postcode" placeholder="e.g. BA1 2AB">
                         </div>
                     </div>
                     <div class="field">
                         <label for="service">Service of Interest</label>
-                        <select id="service" required>
+                        <select id="service" name="service" required>
                             <option value="" disabled selected>Select a service</option>
                             <option value="blood-draw">SEQ.01 — Blood Draw</option>
                             <option value="draw-interpret">SEQ.02 — Draw &amp; Interpret</option>
@@ -429,7 +430,7 @@
                     </div>
                     <div class="field">
                         <label for="message">Additional Information</label>
-                        <textarea id="message" placeholder="Tell me a little about what you're looking for, any relevant health context, or questions you may have..."></textarea>
+                        <textarea id="message" name="message" placeholder="Tell me a little about what you're looking for, any relevant health context, or questions you may have..."></textarea>
                     </div>
                     <button type="submit" class="form-submit">Submit Request →</button>
                     <div class="form-success" id="form-success">
@@ -472,15 +473,29 @@
 
     function handleSubmit(e) {
         e.preventDefault();
+        const form = e.target;
         const success = document.getElementById('form-success');
-        const btn = e.target.querySelector('.form-submit');
-        success.style.display = 'block';
-        btn.style.display = 'none';
-        setTimeout(() => {
-            e.target.reset();
-            success.style.display = 'none';
-            btn.style.display = 'inline-block';
-        }, 5000);
+        const btn = form.querySelector('.form-submit');
+
+        // Send the form data to Netlify in the background
+        fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(new FormData(form)).toString()
+        })
+        .then(() => {
+            // Show confirmation and reset form on success
+            success.style.display = 'block';
+            btn.style.display = 'none';
+            form.reset();
+            setTimeout(() => {
+                success.style.display = 'none';
+                btn.style.display = 'inline-block';
+            }, 5000);
+        })
+        .catch(() => {
+            alert('Something went wrong — please try emailing millielmcgee@gmail.com directly.');
+        });
     }
 
     const container = document.getElementById('canvas-container');
