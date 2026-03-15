@@ -79,6 +79,148 @@
         .nav-book::after  { content: ']'; position: absolute; right: -12px; opacity: 0; transition: all 0.3s ease; color: var(--clr-crimson); }
         .nav-book:hover { color: var(--clr-bone); }
         .nav-book:hover::before, .nav-book:hover::after { opacity: 1; }
+        .nav-links { display: flex; align-items: center; gap: var(--space-md); }
+        .nav-link {
+            font-family: var(--font-mono); font-size: 0.7rem;
+            color: rgba(227, 210, 164, 0.7); text-transform: uppercase;
+            letter-spacing: 0.1em; position: relative;
+            transition: color 0.3s ease; cursor: pointer;
+            background: none; border: none; padding: 0;
+        }
+        .nav-link:hover { color: var(--clr-bone); }
+        .nav-link::before { content: '['; position: absolute; left: -12px; opacity: 0; transition: all 0.3s ease; color: var(--clr-crimson); }
+        .nav-link::after  { content: ']'; position: absolute; right: -12px; opacity: 0; transition: all 0.3s ease; color: var(--clr-crimson); }
+        .nav-link:hover::before, .nav-link:hover::after { opacity: 1; }
+
+        /* INNER PAGES — shared layout */
+        .inner-page {
+            flex: 1; padding: var(--space-xl) var(--space-lg);
+            display: flex; flex-direction: column;
+        }
+        .inner-header {
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-sm);
+            border-bottom: 1px solid rgba(227, 210, 164, 0.3);
+            display: flex; justify-content: space-between; align-items: flex-end;
+        }
+        .inner-title { font-size: 3rem; line-height: 0.9; }
+
+        /* SERVICES PAGE */
+        .service-block {
+            display: grid; grid-template-columns: 1fr 2fr;
+            gap: var(--space-lg);
+            padding: var(--space-lg) 0;
+            border-bottom: var(--border-subtle);
+        }
+        .service-block:last-of-type { border-bottom: none; }
+        .service-block-label { padding-top: 0.3rem; }
+        .service-block-label .card-num {
+            position: static; display: block;
+            margin-bottom: var(--space-sm);
+        }
+        .service-block-label h3 {
+            font-size: 2.2rem; line-height: 1;
+            margin-bottom: var(--space-sm);
+        }
+        .service-block-label .mono-data { display: block; }
+        .service-block-body { display: flex; flex-direction: column; gap: var(--space-md); }
+        .service-block-body p {
+            font-family: var(--font-mono); font-size: 0.82rem;
+            line-height: 1.9; color: rgba(227, 210, 164, 0.75);
+        }
+        .service-block-body p strong {
+            color: var(--clr-bone); font-weight: 600;
+        }
+        .service-includes {
+            border: var(--border-subtle);
+            padding: var(--space-md);
+            background: rgba(5, 2, 2, 0.4);
+        }
+        .service-includes .mono-data {
+            display: block; margin-bottom: var(--space-sm);
+            color: var(--clr-crimson);
+        }
+        .service-includes ul {
+            list-style: none; display: flex; flex-direction: column; gap: 0.5rem;
+        }
+        .service-includes ul li {
+            font-family: var(--font-mono); font-size: 0.75rem;
+            color: rgba(227, 210, 164, 0.7); line-height: 1.5;
+            padding-left: 1rem; position: relative;
+        }
+        .service-includes ul li::before {
+            content: '♦'; position: absolute; left: 0;
+            color: var(--clr-crimson); font-size: 0.5rem; top: 0.2rem;
+        }
+
+        /* PRICING PAGE */
+        .pricing-intro {
+            font-family: var(--font-mono); font-size: 0.82rem;
+            line-height: 1.9; color: rgba(227, 210, 164, 0.7);
+            max-width: 680px; margin-bottom: var(--space-lg);
+        }
+        .pricing-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md); margin-bottom: var(--space-lg);
+        }
+        .pricing-card {
+            border: var(--border-subtle); padding: var(--space-md);
+            position: relative; background: rgba(5, 2, 2, 0.4);
+            display: flex; flex-direction: column;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+        }
+        .pricing-card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
+            background: linear-gradient(90deg, var(--clr-crimson), var(--clr-rust), transparent);
+        }
+        .pricing-card:hover {
+            border-color: var(--clr-crimson);
+            background: rgba(75, 10, 18, 0.2);
+            transform: translateY(-4px);
+        }
+        .pricing-card .card-num { position: static; display: block; margin-bottom: var(--space-sm); }
+        .pricing-card h3 { font-size: 1.8rem; margin-bottom: var(--space-xs); }
+        .pricing-card .mono-data { display: block; margin-bottom: var(--space-md); }
+        .price-amount {
+            font-size: 3.5rem; font-family: var(--font-serif);
+            color: var(--clr-gold); line-height: 1;
+            margin-bottom: var(--space-xs);
+        }
+        .price-amount span {
+            font-size: 1.2rem; color: rgba(227, 210, 164, 0.5);
+            font-family: var(--font-mono);
+        }
+        .price-desc {
+            font-family: var(--font-mono); font-size: 0.75rem;
+            line-height: 1.6; color: rgba(227, 210, 164, 0.6);
+            margin-bottom: var(--space-md); flex: 1;
+        }
+        .pricing-note {
+            border: var(--border-accent);
+            padding: var(--space-md);
+            background: rgba(75, 10, 18, 0.15);
+            display: grid; grid-template-columns: auto 1fr;
+            gap: var(--space-md); align-items: start;
+        }
+        .pricing-note-icon {
+            font-size: 1.5rem; color: var(--clr-crimson); margin-top: 0.2rem;
+        }
+        .pricing-note p {
+            font-family: var(--font-mono); font-size: 0.78rem;
+            line-height: 1.8; color: rgba(227, 210, 164, 0.7);
+        }
+        .pricing-note p strong { color: var(--clr-bone); }
+
+        @media (max-width: 1024px) {
+            .inner-page { padding: var(--space-lg) var(--space-md); }
+            .service-block { grid-template-columns: 1fr; gap: var(--space-md); }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .nav-links { gap: var(--space-sm); }
+        }
+        @media (max-width: 768px) {
+            .nav-link { display: none; }
+        }
 
         /* PAGE SWITCHING */
         .page { display: none; flex-direction: column; flex: 1; }
@@ -284,12 +426,17 @@
             .protocol-card { grid-column: span 6; }
             .hero-title { font-size: 10vw; }
             .contact-footer-details { grid-template-columns: 1fr; }
+            .inner-page { padding: var(--space-lg) var(--space-md); }
+            .service-block { grid-template-columns: 1fr; gap: var(--space-md); }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .nav-links { gap: var(--space-sm); }
         }
         @media (max-width: 768px) {
             .protocol-card { grid-column: span 12; }
             footer { grid-template-columns: 1fr; }
             .form-row { grid-template-columns: 1fr; }
             .contact-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .nav-link { display: none; }
         }
     </style>
 </head>
@@ -299,7 +446,11 @@
 
     <nav>
         <div class="nav-brand" onclick="showPage('home')">INTENTIONAL WELLBEING</div>
-        <button class="nav-book" onclick="showPage('contact')">Book Now</button>
+        <div class="nav-links">
+            <button class="nav-link" onclick="showPage('services')">Services</button>
+            <button class="nav-link" onclick="showPage('pricing')">Pricing</button>
+            <button class="nav-book" onclick="showPage('contact')">Book Now</button>
+        </div>
     </nav>
 
     <!-- HOME PAGE -->
@@ -328,7 +479,10 @@
                     <span class="mono-data">PHLEBOTOMY // MOBILE</span>
                     <h3 class="card-title">Blood Draw</h3>
                     <p class="card-desc">Professional, sterile venipuncture carried out at your home or chosen location. Sample collection only — ideal if you already have a test kit or your practitioner has arranged your panel. Centrifugation available on request for samples requiring serum or plasma separation.</p>
-                    <button class="btn-outline" onclick="showPage('contact')">Enquire</button>
+                    <div style="display:flex; gap: 0.75rem; flex-wrap: wrap;">
+                        <button class="btn-outline" onclick="showPage('services')">Learn More</button>
+                        <button class="btn-outline" onclick="showPage('contact')">Enquire</button>
+                    </div>
                 </div>
 
                 <div class="protocol-card">
@@ -336,7 +490,10 @@
                     <span class="mono-data">FUNCTIONAL // ANALYSIS</span>
                     <h3 class="card-title">Draw &amp; Interpret</h3>
                     <p class="card-desc">Blood draw combined with expert interpretation of your functional test results — assessed against optimal, not just standard, reference ranges. Working with leading labs including FunctionalDX and Genova Diagnostics, this service reveals the nuance behind your numbers and provides meaningful clinical insight.</p>
-                    <button class="btn-outline" onclick="showPage('contact')">Enquire</button>
+                    <div style="display:flex; gap: 0.75rem; flex-wrap: wrap;">
+                        <button class="btn-outline" onclick="showPage('services')">Learn More</button>
+                        <button class="btn-outline" onclick="showPage('contact')">Enquire</button>
+                    </div>
                 </div>
 
                 <div class="protocol-card">
@@ -344,7 +501,10 @@
                     <span class="mono-data">NUTRITION // FULL PROTOCOL</span>
                     <h3 class="card-title">Nutritional Therapy</h3>
                     <p class="card-desc">A comprehensive, personalised approach to your health. Beginning with a full initial consultation — covering past medical history, current diet, lifestyle and your goals — you will receive a bespoke protocol encompassing food, targeted supplementation, movement and lifestyle recommendations. Available in person in Bath or online.</p>
-                    <button class="btn-outline" onclick="showPage('contact')">Enquire</button>
+                    <div style="display:flex; gap: 0.75rem; flex-wrap: wrap;">
+                        <button class="btn-outline" onclick="showPage('services')">Learn More</button>
+                        <button class="btn-outline" onclick="showPage('contact')">Enquire</button>
+                    </div>
                 </div>
             </section>
         </main>
@@ -461,8 +621,168 @@
         </div>
     </div>
 
-</div>
+    <!-- SERVICES PAGE -->
+    <div class="page" id="page-services">
+        <div class="inner-page">
+            <div class="inner-header">
+                <div>
+                    <span class="mono-data" style="display:block; margin-bottom: 0.75rem;">WHAT I OFFER</span>
+                    <h2 class="inner-title">The <span class="accent-text">Services.</span></h2>
+                </div>
+                <button class="back-btn" onclick="showPage('home')">Back to main</button>
+            </div>
 
+            <!-- SEQ.01 -->
+            <div class="service-block">
+                <div class="service-block-label">
+                    <span class="card-num">SEQ.01</span>
+                    <h3>Blood<br>Draw</h3>
+                    <span class="mono-data">PHLEBOTOMY // MOBILE</span>
+                </div>
+                <div class="service-block-body">
+                    <p>
+                        [Replace this with your own description of the blood draw service. You might want to talk about what the experience is like, how you ensure a calm and comfortable environment, your sterile protocol, and who this service is best suited for — for example, those who have a test kit from their GP or another practitioner and need a skilled phlebotomist to carry out the draw at home.]
+                    </p>
+                    <p>
+                        [You could also mention the centrifugation service here — what it is, why it's needed for certain tests, and that it's available on request.]
+                    </p>
+                    <div class="service-includes">
+                        <span class="mono-data">This service includes</span>
+                        <ul>
+                            <li>In-home or location-of-choice venipuncture</li>
+                            <li>Full sterile protocol and single-use equipment</li>
+                            <li>Centrifugation available on request</li>
+                            <li>Sample preparation and handoff or courier coordination</li>
+                            <li>[Add any other inclusions here]</li>
+                        </ul>
+                    </div>
+                    <button class="btn-outline" onclick="showPage('contact')" style="align-self: flex-start;">Enquire →</button>
+                </div>
+            </div>
+
+            <!-- SEQ.02 -->
+            <div class="service-block">
+                <div class="service-block-label">
+                    <span class="card-num">SEQ.02</span>
+                    <h3>Draw &amp;<br>Interpret</h3>
+                    <span class="mono-data">FUNCTIONAL // ANALYSIS</span>
+                </div>
+                <div class="service-block-body">
+                    <p>
+                        [Replace this with your own description of the draw and interpret service. This is a great place to explain the difference between standard NHS reference ranges and the optimal ranges you work with — and why that distinction matters for someone wanting to understand their health at a deeper level.]
+                    </p>
+                    <p>
+                        [You might also want to explain the labs you work with — FunctionalDX, Genova Diagnostics, and any others — and what kinds of tests they offer. What does the process look like from start to finish? What does the client receive at the end?]
+                    </p>
+                    <div class="service-includes">
+                        <span class="mono-data">This service includes</span>
+                        <ul>
+                            <li>Professional blood draw at your location</li>
+                            <li>Test panel arranged through FunctionalDX, Genova, or other partner labs</li>
+                            <li>Full results interpretation using optimal reference ranges</li>
+                            <li>Written summary of findings and key markers</li>
+                            <li>[Add any other inclusions here]</li>
+                        </ul>
+                    </div>
+                    <button class="btn-outline" onclick="showPage('contact')" style="align-self: flex-start;">Enquire →</button>
+                </div>
+            </div>
+
+            <!-- SEQ.03 -->
+            <div class="service-block">
+                <div class="service-block-label">
+                    <span class="card-num">SEQ.03</span>
+                    <h3>Nutritional<br>Therapy</h3>
+                    <span class="mono-data">NUTRITION // FULL PROTOCOL</span>
+                </div>
+                <div class="service-block-body">
+                    <p>
+                        [Replace this with your own description of your nutritional therapy service. This is the place to really convey your approach and philosophy — what does naturopathic nutritional therapy mean to you, and how does it differ from generic dietary advice? What kinds of clients do you typically work with, and what kinds of results do they see?]
+                    </p>
+                    <p>
+                        [Walk the reader through what working with you looks like: the initial consultation, the areas you cover (medical history, diet, lifestyle, goals), and what the protocol they receive will contain — food recommendations, supplementation, movement, lifestyle changes.]
+                    </p>
+                    <p>
+                        [You could also mention that sessions are available in person in Bath or online, and whether follow-up appointments are part of the package.]
+                    </p>
+                    <div class="service-includes">
+                        <span class="mono-data">This service includes</span>
+                        <ul>
+                            <li>Full initial consultation (in person in Bath or online)</li>
+                            <li>Review of past medical history, current diet and lifestyle</li>
+                            <li>Goal-setting and health prioritisation</li>
+                            <li>Bespoke written protocol: food, supplementation, movement &amp; lifestyle</li>
+                            <li>[Add any follow-up sessions or other inclusions here]</li>
+                        </ul>
+                    </div>
+                    <button class="btn-outline" onclick="showPage('contact')" style="align-self: flex-start;">Enquire →</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- PRICING PAGE -->
+    <div class="page" id="page-pricing">
+        <div class="inner-page">
+            <div class="inner-header">
+                <div>
+                    <span class="mono-data" style="display:block; margin-bottom: 0.75rem;">INVESTMENT</span>
+                    <h2 class="inner-title">Pricing &amp;<br><span class="accent-text">Fees.</span></h2>
+                </div>
+                <button class="back-btn" onclick="showPage('home')">Back to main</button>
+            </div>
+
+            <p class="pricing-intro">
+                All services are priced transparently below. Mobile visits within BA1 and BA2 are included as standard — travel to postcodes outside of this area is quoted separately once your location has been confirmed.
+            </p>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <span class="card-num">SEQ.01</span>
+                    <h3>Blood Draw</h3>
+                    <span class="mono-data">PHLEBOTOMY // MOBILE</span>
+                    <div class="price-amount">£XX<span> /visit</span></div>
+                    <p class="price-desc">
+                        Professional in-home venipuncture with full sterile protocol. Centrifugation available on request — please enquire for pricing if required.
+                    </p>
+                    <button class="btn-outline" onclick="showPage('contact')">Book Now</button>
+                </div>
+
+                <div class="pricing-card">
+                    <span class="card-num">SEQ.02</span>
+                    <h3>Draw &amp; Interpret</h3>
+                    <span class="mono-data">FUNCTIONAL // ANALYSIS</span>
+                    <div class="price-amount">£XX<span> /session</span></div>
+                    <p class="price-desc">
+                        Blood draw plus full functional results interpretation using optimal reference ranges. Lab test costs are charged separately by the relevant laboratory.
+                    </p>
+                    <button class="btn-outline" onclick="showPage('contact')">Book Now</button>
+                </div>
+
+                <div class="pricing-card">
+                    <span class="card-num">SEQ.03</span>
+                    <h3>Nutritional Therapy</h3>
+                    <span class="mono-data">NUTRITION // FULL PROTOCOL</span>
+                    <div class="price-amount">£XX<span> /programme</span></div>
+                    <p class="price-desc">
+                        Full initial consultation and bespoke written protocol. Available in person in Bath or online. [Add detail here about what is included, e.g. follow-up sessions.]
+                    </p>
+                    <button class="btn-outline" onclick="showPage('contact')">Book Now</button>
+                </div>
+            </div>
+
+            <div class="pricing-note">
+                <div class="pricing-note-icon">✦</div>
+                <p>
+                    <strong>Travel outside BA1 &amp; BA2 —</strong> Mobile visits to postcodes beyond Bath city centre are warmly welcomed and priced individually based on travel time and distance. Please get in touch with your postcode and I will provide a quote alongside your service fee.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
     function showPage(name) {
