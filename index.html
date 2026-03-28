@@ -92,7 +92,7 @@
         .nav-link::after  { content: ']'; position: absolute; right: -12px; opacity: 0; transition: all 0.3s ease; color: var(--clr-crimson); }
         .nav-link:hover::before, .nav-link:hover::after { opacity: 1; }
 
-        /* INNER PAGES — shared layout */
+        /* INNER PAGES */
         .inner-page {
             flex: 1; padding: var(--space-xl) var(--space-lg);
             display: flex; flex-direction: column;
@@ -128,9 +128,7 @@
             font-family: var(--font-mono); font-size: 0.82rem;
             line-height: 1.9; color: rgba(227, 210, 164, 0.75);
         }
-        .service-block-body p strong {
-            color: var(--clr-bone); font-weight: 600;
-        }
+        .service-block-body p strong { color: var(--clr-bone); font-weight: 600; }
         .service-includes {
             border: var(--border-subtle);
             padding: var(--space-md);
@@ -191,9 +189,9 @@
             font-size: 1.2rem; color: rgba(227, 210, 164, 0.5);
             font-family: var(--font-mono);
         }
-        .price-desc {
-            font-family: var(--font-mono); font-size: 0.75rem;
-            line-height: 1.6; color: rgba(227, 210, 164, 0.6);
+        .price-oneliner {
+            font-family: var(--font-mono); font-size: 0.82rem;
+            line-height: 1.7; color: rgba(227, 210, 164, 0.85);
             margin-bottom: var(--space-md); flex: 1;
         }
         .pricing-note {
@@ -211,16 +209,6 @@
             line-height: 1.8; color: rgba(227, 210, 164, 0.7);
         }
         .pricing-note p strong { color: var(--clr-bone); }
-
-        @media (max-width: 1024px) {
-            .inner-page { padding: var(--space-lg) var(--space-md); }
-            .service-block { grid-template-columns: 1fr; gap: var(--space-md); }
-            .pricing-grid { grid-template-columns: 1fr; }
-            .nav-links { gap: var(--space-sm); }
-        }
-        @media (max-width: 768px) {
-            .nav-link { display: none; }
-        }
 
         /* PAGE SWITCHING */
         .page { display: none; flex-direction: column; flex: 1; }
@@ -328,7 +316,6 @@
         }
         .back-btn:hover { color: var(--clr-gold); }
         .back-btn::before { content: '← '; }
-
         .contact-grid {
             display: flex; flex-direction: column;
             gap: var(--space-lg); flex: 1;
@@ -389,7 +376,6 @@
         .field select option { background: #0d0404; color: var(--clr-bone); }
         .field input::placeholder,
         .field textarea::placeholder { color: rgba(227, 210, 164, 0.25); }
-
         .form-submit {
             display: inline-block; font-family: var(--font-mono); font-size: 0.7rem;
             text-transform: uppercase; letter-spacing: 0.1em;
@@ -421,22 +407,22 @@
         .footer-col a:hover { color: var(--clr-gold); }
 
         @media (max-width: 1024px) {
+            .inner-page { padding: var(--space-lg) var(--space-md); }
+            .service-block { grid-template-columns: 1fr; gap: var(--space-md); }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .nav-links { gap: var(--space-sm); }
             .hero-content { grid-column: 1 / 13; }
             .hero-desc { max-width: 80%; }
             .protocol-card { grid-column: span 6; }
             .hero-title { font-size: 10vw; }
             .contact-footer-details { grid-template-columns: 1fr; }
-            .inner-page { padding: var(--space-lg) var(--space-md); }
-            .service-block { grid-template-columns: 1fr; gap: var(--space-md); }
-            .pricing-grid { grid-template-columns: 1fr; }
-            .nav-links { gap: var(--space-sm); }
         }
         @media (max-width: 768px) {
+            .nav-link { display: none; }
             .protocol-card { grid-column: span 12; }
             footer { grid-template-columns: 1fr; }
             .form-row { grid-template-columns: 1fr; }
             .contact-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
-            .nav-link { display: none; }
         }
     </style>
 </head>
@@ -548,14 +534,11 @@
             </div>
 
             <div class="contact-grid">
-
-                <!-- What to expect -->
                 <div class="contact-info">
                     <span class="mono-data info-label">What to expect</span>
                     <p>Fill out the form and I will be in touch within 48 hours to discuss your requirements and confirm availability.</p>
                 </div>
 
-                <!-- Form -->
                 <form class="contact-form" name="contact" method="POST" data-netlify="true" onsubmit="handleSubmit(event)">
                     <input type="hidden" name="form-name" value="contact">
                     <div class="form-row">
@@ -598,7 +581,6 @@
                     </div>
                 </form>
 
-                <!-- Footer details below form -->
                 <div class="contact-footer-details">
                     <div>
                         <span class="mono-data info-label">Contact</span>
@@ -616,7 +598,6 @@
                         <p>Fully Insured<br>CQC Registered<br>Certified Phlebotomist<br>Certified Naturopathic<br>Nutritional Therapist</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -640,20 +621,14 @@
                     <span class="mono-data">PHLEBOTOMY // MOBILE</span>
                 </div>
                 <div class="service-block-body">
-                    <p>
-                        [Replace this with your own description of the blood draw service. You might want to talk about what the experience is like, how you ensure a calm and comfortable environment, your sterile protocol, and who this service is best suited for — for example, those who have a test kit from their GP or another practitioner and need a skilled phlebotomist to carry out the draw at home.]
-                    </p>
-                    <p>
-                        [You could also mention the centrifugation service here — what it is, why it's needed for certain tests, and that it's available on request.]
-                    </p>
                     <div class="service-includes">
-                        <span class="mono-data">This service includes</span>
+                        <span class="mono-data">What's included</span>
                         <ul>
-                            <li>In-home or location-of-choice venipuncture</li>
-                            <li>Full sterile protocol and single-use equipment</li>
-                            <li>Centrifugation available on request</li>
-                            <li>Sample preparation and handoff or courier coordination</li>
-                            <li>[Add any other inclusions here]</li>
+                            <li>[Your experience — personal, comfortable, carried out in the comfort of your own home]</li>
+                            <li>[Sterile protocol and single-use professional equipment]</li>
+                            <li>[Who this suits — e.g. those with an existing test kit from their GP, consultant or practitioner]</li>
+                            <li>[Centrifugation available on request for tests requiring serum or plasma separation]</li>
+                            <li>[Sample preparation and handoff or courier coordination]</li>
                         </ul>
                     </div>
                     <button class="btn-outline" onclick="showPage('contact')" style="align-self: flex-start;">Enquire →</button>
@@ -668,20 +643,15 @@
                     <span class="mono-data">FUNCTIONAL // ANALYSIS</span>
                 </div>
                 <div class="service-block-body">
-                    <p>
-                        [Replace this with your own description of the draw and interpret service. This is a great place to explain the difference between standard NHS reference ranges and the optimal ranges you work with — and why that distinction matters for someone wanting to understand their health at a deeper level.]
-                    </p>
-                    <p>
-                        [You might also want to explain the labs you work with — FunctionalDX, Genova Diagnostics, and any others — and what kinds of tests they offer. What does the process look like from start to finish? What does the client receive at the end?]
-                    </p>
                     <div class="service-includes">
-                        <span class="mono-data">This service includes</span>
+                        <span class="mono-data">What's included</span>
                         <ul>
-                            <li>Professional blood draw at your location</li>
-                            <li>Test panel arranged through FunctionalDX, Genova, or other partner labs</li>
-                            <li>Full results interpretation using optimal reference ranges</li>
-                            <li>Written summary of findings and key markers</li>
-                            <li>[Add any other inclusions here]</li>
+                            <li>[Testing markers the NHS doesn't routinely test — a broader, more complete picture]</li>
+                            <li>[Results assessed against optimal reference ranges, not just the threshold for clinical concern]</li>
+                            <li>[Spot imbalances early and take a proactive, intentional approach to your health]</li>
+                            <li>[Working with leading functional labs including FunctionalDX and Genova Diagnostics]</li>
+                            <li>[A dedicated results consultation — findings explained clearly, in plain language]</li>
+                            <li>[Faster access than typical NHS appointment wait times]</li>
                         </ul>
                     </div>
                     <button class="btn-outline" onclick="showPage('contact')" style="align-self: flex-start;">Enquire →</button>
@@ -696,23 +666,14 @@
                     <span class="mono-data">NUTRITION // FULL PROTOCOL</span>
                 </div>
                 <div class="service-block-body">
-                    <p>
-                        [Replace this with your own description of your nutritional therapy service. This is the place to really convey your approach and philosophy — what does naturopathic nutritional therapy mean to you, and how does it differ from generic dietary advice? What kinds of clients do you typically work with, and what kinds of results do they see?]
-                    </p>
-                    <p>
-                        [Walk the reader through what working with you looks like: the initial consultation, the areas you cover (medical history, diet, lifestyle, goals), and what the protocol they receive will contain — food recommendations, supplementation, movement, lifestyle changes.]
-                    </p>
-                    <p>
-                        [You could also mention that sessions are available in person in Bath or online, and whether follow-up appointments are part of the package.]
-                    </p>
                     <div class="service-includes">
-                        <span class="mono-data">This service includes</span>
+                        <span class="mono-data">What's included</span>
                         <ul>
-                            <li>Full initial consultation (in person in Bath or online)</li>
-                            <li>Review of past medical history, current diet and lifestyle</li>
-                            <li>Goal-setting and health prioritisation</li>
-                            <li>Bespoke written protocol: food, supplementation, movement &amp; lifestyle</li>
-                            <li>[Add any follow-up sessions or other inclusions here]</li>
+                            <li>[Full initial consultation covering medical history, current diet, lifestyle and your goals]</li>
+                            <li>[Bespoke written protocol: food, targeted supplementation, movement and lifestyle]</li>
+                            <li>[Nothing generic — everything tailored entirely to you]</li>
+                            <li>[Follow-up sessions to track progress and adjust your protocol as you respond]</li>
+                            <li>[Available in person in Bath or online]</li>
                         </ul>
                     </div>
                     <button class="btn-outline" onclick="showPage('contact')" style="align-self: flex-start;">Enquire →</button>
@@ -742,10 +703,8 @@
                     <span class="card-num">SEQ.01</span>
                     <h3>Blood Draw</h3>
                     <span class="mono-data">PHLEBOTOMY // MOBILE</span>
-                    <div class="price-amount">£50<span> /visit</span></div>
-                    <p class="price-desc">
-                        Prices start at £50 per visit. Centrifugation available on request — prices start at £85 for tests requiring serum or plasma separation.
-                    </p>
+                    <div class="price-amount">£60<span> /visit</span></div>
+                    <p class="price-oneliner">Prices start at £50. Test kit required — bring your own, or have your practitioner arrange one. Centrifuge tests from £85.</p>
                     <button class="btn-outline" onclick="showPage('contact')">Book Now</button>
                 </div>
 
@@ -753,10 +712,8 @@
                     <span class="card-num">SEQ.02</span>
                     <h3>Draw &amp; Interpret</h3>
                     <span class="mono-data">FUNCTIONAL // ANALYSIS</span>
-                    <div class="price-amount">£150<span> + test cost</span></div>
-                    <p class="price-desc">
-                        Prices start at £50 for the blood draw + £100 for full results interpretation — from £150 + test cost. Alternatively, tests can be purchased directly from the lab yourself if preferred.
-                    </p>
+                    <div class="price-amount">£160<span> + test cost</span></div>
+                    <p class="price-oneliner">From £150 + test cost. Tests can also be purchased directly from the lab if preferred.</p>
                     <button class="btn-outline" onclick="showPage('contact')">Book Now</button>
                 </div>
 
@@ -765,9 +722,7 @@
                     <h3>Nutritional Therapy</h3>
                     <span class="mono-data">NUTRITION // FULL PROTOCOL</span>
                     <div class="price-amount">£125<span> /initial</span></div>
-                    <p class="price-desc">
-                        Initial consultation from £125. Follow-up sessions from £75. Available in person in Bath or online.
-                    </p>
+                    <p class="price-oneliner">Initial consultation from £125. Follow-up sessions from £75.</p>
                     <button class="btn-outline" onclick="showPage('contact')">Book Now</button>
                 </div>
             </div>
@@ -793,110 +748,109 @@
 
     function handleSubmit(e) {
         e.preventDefault();
-        const form = e.target;
-        const success = document.getElementById('form-success');
-        const btn = form.querySelector('.form-submit');
+        var form = e.target;
+        var success = document.getElementById('form-success');
+        var btn = form.querySelector('.form-submit');
 
-        // Send the form data to Netlify in the background
         fetch('/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: new URLSearchParams(new FormData(form)).toString()
         })
-        .then(() => {
-            // Show confirmation and reset form on success
+        .then(function() {
             success.style.display = 'block';
             btn.style.display = 'none';
             form.reset();
-            setTimeout(() => {
+            setTimeout(function() {
                 success.style.display = 'none';
                 btn.style.display = 'inline-block';
             }, 5000);
         })
-        .catch(() => {
+        .catch(function() {
             alert('Something went wrong — please try emailing millielmcgee@gmail.com directly.');
         });
     }
 
-    const container = document.getElementById('canvas-container');
-    const scene = new THREE.Scene();
-    const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    var container = document.getElementById('canvas-container');
+    var scene = new THREE.Scene();
+    var camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+    var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
     container.appendChild(renderer.domElement);
 
-    const vertexShader = `
-        varying vec2 vUv;
-        void main() { vUv = uv; gl_Position = vec4(position, 1.0); }
-    `;
-    const fragmentShader = `
-        uniform float u_time;
-        uniform vec2 u_resolution;
-        varying vec2 vUv;
-        vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
-        vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
-        vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x); }
-        float snoise(vec2 v) {
-            const vec4 C = vec4(0.211324865405187, 0.366025403784439, -0.577350269189626, 0.024390243902439);
-            vec2 i  = floor(v + dot(v, C.yy));
-            vec2 x0 = v - i + dot(i, C.xx);
-            vec2 i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
-            vec4 x12 = x0.xyxy + C.xxzz;
-            x12.xy -= i1;
-            i = mod289(i);
-            vec3 p = permute(permute(i.y + vec3(0.0, i1.y, 1.0)) + i.x + vec3(0.0, i1.x, 1.0));
-            vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);
-            m = m*m; m = m*m;
-            vec3 x = 2.0 * fract(p * C.www) - 1.0;
-            vec3 h = abs(x) - 0.5;
-            vec3 ox = floor(x + 0.5);
-            vec3 a0 = x - ox;
-            m *= 1.79284291400159 - 0.85373472095314 * (a0*a0 + h*h);
-            vec3 g;
-            g.x  = a0.x  * x0.x  + h.x  * x0.y;
-            g.yz = a0.yz * x12.xz + h.yz * x12.yw;
-            return 130.0 * dot(m, g);
-        }
-        float fbm(vec2 st) {
-            float value = 0.0; float amplitude = 0.5;
-            for (int i = 0; i < 5; i++) { value += amplitude * snoise(st); st *= 2.0; amplitude *= 0.5; }
-            return value;
-        }
-        void main() {
-            vec2 st = gl_FragCoord.xy / u_resolution.xy;
-            st.x *= u_resolution.x / u_resolution.y;
-            vec2 q = vec2(fbm(st + 0.001 * u_time), fbm(st + vec2(1.0)));
-            vec2 r = vec2(fbm(st + 1.0*q + vec2(1.7,9.2) + 0.05*u_time), fbm(st + 1.0*q + vec2(8.3,2.8) + 0.026*u_time));
-            float f = fbm(st + r);
-            vec3 col_deep    = vec3(75.0/255.0, 10.0/255.0, 18.0/255.0);
-            vec3 col_crimson = vec3(142.0/255.0, 27.0/255.0, 19.0/255.0);
-            vec3 col_rust    = vec3(185.0/255.0, 89.0/255.0, 40.0/255.0);
-            vec3 col_bg      = vec3(5.0/255.0, 2.0/255.0, 2.0/255.0);
-            vec3 color = mix(col_bg, col_deep, clamp((f*f)*4.0, 0.0, 1.0));
-            color = mix(color, col_crimson, clamp(length(q), 0.0, 1.0));
-            color = mix(color, col_rust, clamp(length(r.x), 0.0, 1.0) * 0.5);
-            float dist = length(vUv - vec2(0.5));
-            color *= smoothstep(0.8, 0.2, dist * 1.2);
-            gl_FragColor = vec4(color, 1.0);
-        }
-    `;
+    var vertexShader = [
+        'varying vec2 vUv;',
+        'void main() { vUv = uv; gl_Position = vec4(position, 1.0); }'
+    ].join('\n');
 
-    const uniforms = {
+    var fragmentShader = [
+        'uniform float u_time;',
+        'uniform vec2 u_resolution;',
+        'varying vec2 vUv;',
+        'vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }',
+        'vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }',
+        'vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x); }',
+        'float snoise(vec2 v) {',
+        '    const vec4 C = vec4(0.211324865405187, 0.366025403784439, -0.577350269189626, 0.024390243902439);',
+        '    vec2 i  = floor(v + dot(v, C.yy));',
+        '    vec2 x0 = v - i + dot(i, C.xx);',
+        '    vec2 i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);',
+        '    vec4 x12 = x0.xyxy + C.xxzz;',
+        '    x12.xy -= i1;',
+        '    i = mod289(i);',
+        '    vec3 p = permute(permute(i.y + vec3(0.0, i1.y, 1.0)) + i.x + vec3(0.0, i1.x, 1.0));',
+        '    vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);',
+        '    m = m*m; m = m*m;',
+        '    vec3 x = 2.0 * fract(p * C.www) - 1.0;',
+        '    vec3 h = abs(x) - 0.5;',
+        '    vec3 ox = floor(x + 0.5);',
+        '    vec3 a0 = x - ox;',
+        '    m *= 1.79284291400159 - 0.85373472095314 * (a0*a0 + h*h);',
+        '    vec3 g;',
+        '    g.x  = a0.x  * x0.x  + h.x  * x0.y;',
+        '    g.yz = a0.yz * x12.xz + h.yz * x12.yw;',
+        '    return 130.0 * dot(m, g);',
+        '}',
+        'float fbm(vec2 st) {',
+        '    float value = 0.0; float amplitude = 0.5;',
+        '    for (int i = 0; i < 5; i++) { value += amplitude * snoise(st); st *= 2.0; amplitude *= 0.5; }',
+        '    return value;',
+        '}',
+        'void main() {',
+        '    vec2 st = gl_FragCoord.xy / u_resolution.xy;',
+        '    st.x *= u_resolution.x / u_resolution.y;',
+        '    vec2 q = vec2(fbm(st + 0.001 * u_time), fbm(st + vec2(1.0)));',
+        '    vec2 r = vec2(fbm(st + 1.0*q + vec2(1.7,9.2) + 0.05*u_time), fbm(st + 1.0*q + vec2(8.3,2.8) + 0.026*u_time));',
+        '    float f = fbm(st + r);',
+        '    vec3 col_deep    = vec3(75.0/255.0, 10.0/255.0, 18.0/255.0);',
+        '    vec3 col_crimson = vec3(142.0/255.0, 27.0/255.0, 19.0/255.0);',
+        '    vec3 col_rust    = vec3(185.0/255.0, 89.0/255.0, 40.0/255.0);',
+        '    vec3 col_bg      = vec3(5.0/255.0, 2.0/255.0, 2.0/255.0);',
+        '    vec3 color = mix(col_bg, col_deep, clamp((f*f)*4.0, 0.0, 1.0));',
+        '    color = mix(color, col_crimson, clamp(length(q), 0.0, 1.0));',
+        '    color = mix(color, col_rust, clamp(length(r.x), 0.0, 1.0) * 0.5);',
+        '    float dist = length(vUv - vec2(0.5));',
+        '    color *= smoothstep(0.8, 0.2, dist * 1.2);',
+        '    gl_FragColor = vec4(color, 1.0);',
+        '}'
+    ].join('\n');
+
+    var uniforms = {
         u_time: { value: 0.0 },
         u_resolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) }
     };
-    const material = new THREE.ShaderMaterial({ vertexShader, fragmentShader, uniforms, depthWrite: false, depthTest: false });
-    const mesh = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), material);
+    var material = new THREE.ShaderMaterial({ vertexShader: vertexShader, fragmentShader: fragmentShader, uniforms: uniforms, depthWrite: false, depthTest: false });
+    var mesh = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), material);
     scene.add(mesh);
-    const clock = new THREE.Clock();
+    var clock = new THREE.Clock();
     function animate() {
         requestAnimationFrame(animate);
         uniforms.u_time.value = clock.getElapsedTime() * 0.5;
         renderer.render(scene, camera);
     }
     animate();
-    window.addEventListener('resize', () => {
+    window.addEventListener('resize', function() {
         renderer.setSize(window.innerWidth, window.innerHeight);
         uniforms.u_resolution.value.set(window.innerWidth, window.innerHeight);
     });
