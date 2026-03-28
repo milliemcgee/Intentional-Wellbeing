@@ -15,6 +15,7 @@
             --clr-rust: #B95928;
             --clr-bone: #E3D2A4;
             --clr-gold: #ED9E3F;
+            --clr-body: #CFC4A3;
             --font-serif: 'Cormorant Garamond', serif;
             --font-mono: 'Vollkorn', serif;
             --border-subtle: 1px solid rgba(227, 210, 164, 0.15);
@@ -125,8 +126,9 @@
         .service-block-label .mono-data { display: block; }
         .service-block-body { display: flex; flex-direction: column; gap: var(--space-md); }
         .service-block-body p {
-            font-family: var(--font-mono); font-size: 0.82rem;
-            line-height: 1.9; color: rgba(227, 210, 164, 0.75);
+            font-family: var(--font-mono); font-size: 0.92rem;
+            line-height: 1.9; color: var(--clr-body);
+            font-style: normal;
         }
         .service-block-body p strong { color: var(--clr-bone); font-weight: 600; }
         .service-includes {
@@ -142,9 +144,10 @@
             list-style: none; display: flex; flex-direction: column; gap: 0.5rem;
         }
         .service-includes ul li {
-            font-family: var(--font-mono); font-size: 0.75rem;
-            color: rgba(227, 210, 164, 0.7); line-height: 1.5;
+            font-family: var(--font-mono); font-size: 0.88rem;
+            color: var(--clr-body); line-height: 1.7;
             padding-left: 1rem; position: relative;
+            font-style: normal;
         }
         .service-includes ul li::before {
             content: '♦'; position: absolute; left: 0;
@@ -153,9 +156,10 @@
 
         /* PRICING PAGE */
         .pricing-intro {
-            font-family: var(--font-mono); font-size: 0.82rem;
-            line-height: 1.9; color: rgba(227, 210, 164, 0.7);
+            font-family: var(--font-mono); font-size: 0.92rem;
+            line-height: 1.9; color: var(--clr-body);
             max-width: 680px; margin-bottom: var(--space-lg);
+            font-style: normal;
         }
         .pricing-grid {
             display: grid; grid-template-columns: repeat(3, 1fr);
@@ -190,9 +194,10 @@
             font-family: var(--font-mono);
         }
         .price-oneliner {
-            font-family: var(--font-mono); font-size: 0.82rem;
-            line-height: 1.7; color: rgba(227, 210, 164, 0.85);
+            font-family: var(--font-mono); font-size: 0.88rem;
+            line-height: 1.7; color: var(--clr-body);
             margin-bottom: var(--space-md); flex: 1;
+            font-style: normal;
         }
         .pricing-note {
             border: var(--border-accent);
@@ -205,8 +210,9 @@
             font-size: 1.5rem; color: var(--clr-crimson); margin-top: 0.2rem;
         }
         .pricing-note p {
-            font-family: var(--font-mono); font-size: 0.78rem;
-            line-height: 1.8; color: rgba(227, 210, 164, 0.7);
+            font-family: var(--font-mono); font-size: 0.88rem;
+            line-height: 1.8; color: var(--clr-body);
+            font-style: normal;
         }
         .pricing-note p strong { color: var(--clr-bone); }
 
@@ -227,10 +233,11 @@
         }
         .hero-title { font-size: 7vw; margin-bottom: var(--space-md); letter-spacing: -0.02em; }
         .hero-desc {
-            font-size: 1.5rem; max-width: 60%; line-height: 1.4;
-            color: rgba(227, 210, 164, 0.8);
+            font-size: 1.25rem; max-width: 60%; line-height: 1.5;
+            color: var(--clr-body);
             border-left: 2px solid var(--clr-crimson);
-            padding-left: var(--space-md); font-style: italic;
+            padding-left: var(--space-md);
+            font-style: normal;
         }
         .crosshair { position: absolute; width: 15px; height: 15px; }
         .crosshair::before, .crosshair::after { content: ''; position: absolute; background: var(--clr-bone); opacity: 0.3; }
@@ -269,7 +276,12 @@
         .protocol-card:hover::before { transform: scaleX(1); }
         .card-num { position: absolute; top: 1rem; right: 1rem; font-family: var(--font-mono); color: var(--clr-crimson); font-size: 0.8rem; }
         .card-title { font-size: 1.8rem; margin: var(--space-md) 0 var(--space-sm); }
-        .card-desc { font-family: var(--font-mono); font-size: 0.75rem; line-height: 1.6; color: rgba(227, 210, 164, 0.7); margin-bottom: var(--space-md); }
+        .card-desc {
+            font-family: var(--font-mono); font-size: 0.88rem;
+            line-height: 1.7; color: var(--clr-body);
+            margin-bottom: var(--space-md);
+            font-style: normal;
+        }
         .btn-outline {
             display: inline-block; font-family: var(--font-mono); font-size: 0.7rem;
             text-transform: uppercase; text-decoration: none; color: var(--clr-bone);
@@ -322,11 +334,11 @@
             max-width: 780px;
         }
         .contact-info p {
-            font-family: var(--font-mono); font-size: 0.8rem;
-            line-height: 1.9; color: rgba(227, 210, 164, 0.7);
-            margin-bottom: 0;
+            font-family: var(--font-mono); font-size: 0.92rem;
+            line-height: 1.9; color: var(--clr-body);
+            margin-bottom: 0; font-style: normal;
         }
-        .contact-info a { color: rgba(227, 210, 164, 0.7); text-decoration: none; cursor: pointer; }
+        .contact-info a { color: var(--clr-body); text-decoration: none; cursor: pointer; }
         .contact-info a:hover { color: var(--clr-gold); }
         .info-label {
             display: block; margin-bottom: var(--space-sm);
@@ -339,10 +351,11 @@
             border-top: var(--border-subtle);
         }
         .contact-footer-details p {
-            font-family: var(--font-mono); font-size: 0.8rem;
-            line-height: 1.8; color: rgba(227, 210, 164, 0.6);
+            font-family: var(--font-mono); font-size: 0.88rem;
+            line-height: 1.8; color: var(--clr-body);
+            font-style: normal;
         }
-        .contact-footer-details a { color: rgba(227, 210, 164, 0.6); text-decoration: none; cursor: pointer; }
+        .contact-footer-details a { color: var(--clr-body); text-decoration: none; cursor: pointer; }
         .contact-footer-details a:hover { color: var(--clr-gold); }
 
         /* FORM */
@@ -360,7 +373,7 @@
             background: rgba(227, 210, 164, 0.04);
             border: var(--border-subtle);
             color: var(--clr-bone);
-            font-family: var(--font-mono); font-size: 0.8rem;
+            font-family: var(--font-mono); font-size: 0.88rem;
             padding: 0.75rem 1rem;
             outline: none;
             transition: border-color 0.3s ease;
@@ -375,7 +388,7 @@
         .field textarea { resize: vertical; min-height: 130px; }
         .field select option { background: #0d0404; color: var(--clr-bone); }
         .field input::placeholder,
-        .field textarea::placeholder { color: rgba(227, 210, 164, 0.25); }
+        .field textarea::placeholder { color: rgba(207, 196, 163, 0.35); }
         .form-submit {
             display: inline-block; font-family: var(--font-mono); font-size: 0.7rem;
             text-transform: uppercase; letter-spacing: 0.1em;
@@ -389,7 +402,7 @@
         }
         .form-success {
             display: none;
-            font-family: var(--font-mono); font-size: 0.8rem;
+            font-family: var(--font-mono); font-size: 0.88rem;
             color: var(--clr-gold); letter-spacing: 0.05em;
             padding: 1rem; border: 1px solid rgba(237, 158, 63, 0.4);
         }
@@ -402,8 +415,12 @@
             gap: var(--space-md); background: #000;
         }
         .footer-col .mono-data { margin-bottom: 1rem; display: block; color: var(--clr-crimson); }
-        .footer-col p { font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.8; color: rgba(227, 210, 164, 0.6); }
-        .footer-col a { color: rgba(227, 210, 164, 0.6); text-decoration: none; cursor: pointer; }
+        .footer-col p {
+            font-family: var(--font-mono); font-size: 0.88rem;
+            line-height: 1.8; color: var(--clr-body);
+            font-style: normal;
+        }
+        .footer-col a { color: var(--clr-body); text-decoration: none; cursor: pointer; }
         .footer-col a:hover { color: var(--clr-gold); }
 
         @media (max-width: 1024px) {
@@ -464,7 +481,7 @@
                     <span class="card-num">SEQ.01</span>
                     <span class="mono-data">PHLEBOTOMY // MOBILE</span>
                     <h3 class="card-title">Blood Draw</h3>
-                    <p class="card-desc">Professional, sterile venipuncture carried out at your home or chosen location. Sample collection only — ideal if you already have a test kit or your practitioner has arranged your panel. Centrifugation available on request for samples requiring serum or plasma separation.</p>
+                    <p class="card-desc">Professional, clean and personal blood draw carried out in the comfort of your home or your chosen location. Ideal if you already have your test kit or your practitioner has arranged your panel. Centrifugation available on request for samples requiring serum or plasma separation. If you are unsure do get in touch and I will be able to advise on what you need. </p>
                     <div style="display:flex; gap: 0.75rem; flex-wrap: wrap;">
                         <button class="btn-outline" onclick="showPage('services')">Learn More</button>
                         <button class="btn-outline" onclick="showPage('contact')">Enquire</button>
@@ -475,7 +492,7 @@
                     <span class="card-num">SEQ.02</span>
                     <span class="mono-data">FUNCTIONAL // ANALYSIS</span>
                     <h3 class="card-title">Draw &amp; Interpret</h3>
-                    <p class="card-desc">Blood draw combined with expert interpretation of your functional test results — assessed against optimal, not just standard, reference ranges. Working with leading labs including FunctionalDX and Genova Diagnostics, this service reveals the nuance behind your numbers and provides meaningful clinical insight.</p>
+                    <p class="card-desc">Blood draw combined with a fully explained and clearly presented interpretation of your functional test results assessed against optimal, not just standard, reference ranges. Working with leading labs including FunctionalDX and Genova Diagnostics, I can give you meaningful clinical insights and provide clarity about what is really going on under your skin.</p>
                     <div style="display:flex; gap: 0.75rem; flex-wrap: wrap;">
                         <button class="btn-outline" onclick="showPage('services')">Learn More</button>
                         <button class="btn-outline" onclick="showPage('contact')">Enquire</button>
@@ -486,7 +503,7 @@
                     <span class="card-num">SEQ.03</span>
                     <span class="mono-data">NUTRITION // FULL PROTOCOL</span>
                     <h3 class="card-title">Nutritional Therapy</h3>
-                    <p class="card-desc">A comprehensive, personalised approach to your health. Beginning with a full initial consultation — covering past medical history, current diet, lifestyle and your goals — you will receive a bespoke protocol encompassing food, targeted supplementation, movement and lifestyle recommendations. Available in person in Bath or online.</p>
+                    <p class="card-desc">A comprehensive, personalised approach to your health. We start at the very beginning with a full initial consultation that covers your past medical history, current diet, lifestyle and your goals. You will then receive a bespoke protocol that encompasses food, targeted supplementation, movement and lifestyle recommendations. Available in person in Bath or online.</p>
                     <div style="display:flex; gap: 0.75rem; flex-wrap: wrap;">
                         <button class="btn-outline" onclick="showPage('services')">Learn More</button>
                         <button class="btn-outline" onclick="showPage('contact')">Enquire</button>
@@ -704,7 +721,7 @@
                     <h3>Blood Draw</h3>
                     <span class="mono-data">PHLEBOTOMY // MOBILE</span>
                     <div class="price-amount">£60<span> /visit</span></div>
-                    <p class="price-oneliner">Prices start at £50. Test kit required — bring your own, or have your practitioner arrange one. Centrifuge tests from £85.</p>
+                    <p class="price-oneliner">Prices start at £60. Test kit required. Bring your own, or have your practitioner arrange one. Centrifuge tests from £85.</p>
                     <button class="btn-outline" onclick="showPage('contact')">Book Now</button>
                 </div>
 
@@ -713,7 +730,7 @@
                     <h3>Draw &amp; Interpret</h3>
                     <span class="mono-data">FUNCTIONAL // ANALYSIS</span>
                     <div class="price-amount">£160<span> + test cost</span></div>
-                    <p class="price-oneliner">From £150 + test cost. Tests can also be purchased directly from the lab if preferred.</p>
+                    <p class="price-oneliner">From £160 + test cost. I can order your appropriate test or you can purchase directly from the lab if preferred and have ready for the draw.</p>
                     <button class="btn-outline" onclick="showPage('contact')">Book Now</button>
                 </div>
 
