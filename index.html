@@ -74,7 +74,7 @@
             text-transform: uppercase; letter-spacing: 0.1em;
             position: relative; transition: color 0.3s ease;
             cursor: pointer; background: none; border: none;
-            padding: 0;
+            padding: 0; white-space: nowrap;
         }
         .nav-book::before { content: '['; position: absolute; left: -12px; opacity: 0; transition: all 0.3s ease; color: var(--clr-crimson); }
         .nav-book::after  { content: ']'; position: absolute; right: -12px; opacity: 0; transition: all 0.3s ease; color: var(--clr-crimson); }
@@ -222,8 +222,9 @@
 
         /* HERO */
         .hero {
-            height: 90vh; display: flex; align-items: center;
+            min-height: 90vh; display: flex; align-items: center;
             border-bottom: var(--border-subtle); position: relative;
+            padding: var(--space-lg) 0;
         }
         .hero-grid { width: 100%; height: 100%; }
         .hero-content {
@@ -423,6 +424,9 @@
         .footer-col a { color: var(--clr-body); text-decoration: none; cursor: pointer; }
         .footer-col a:hover { color: var(--clr-gold); }
 
+        /* =====================
+           TABLET (max 1024px)
+        ===================== */
         @media (max-width: 1024px) {
             .inner-page { padding: var(--space-lg) var(--space-md); }
             .service-block { grid-template-columns: 1fr; gap: var(--space-md); }
@@ -434,12 +438,71 @@
             .hero-title { font-size: 10vw; }
             .contact-footer-details { grid-template-columns: 1fr; }
         }
+
+        /* =====================
+           MOBILE (max 768px)
+        ===================== */
         @media (max-width: 768px) {
+            /* Nav */
+            .nav-brand { font-size: 0.85rem; letter-spacing: 0.03em; }
             .nav-link { display: none; }
+            nav { padding: 0.75rem 1.25rem; }
+
+            /* Hide floating book button on mobile — nav has Book Now */
+            .booking-trigger { display: none; }
+
+            /* Hero */
+            .hero { min-height: 85vh; padding: var(--space-md) 0; }
+            .hero-title { font-size: 13vw; line-height: 0.9; }
+            .hero-desc {
+                font-size: 1rem; max-width: 100%;
+                padding-left: var(--space-sm);
+            }
+            .grid-container { padding: 0 1.25rem; }
+
+            /* Protocols section */
+            .protocols { padding: var(--space-lg) 0; }
+            .protocols.grid-container { padding-left: 1.25rem; padding-right: 1.25rem; }
             .protocol-card { grid-column: span 12; }
-            footer { grid-template-columns: 1fr; }
+            .section-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+
+            /* Inner pages */
+            .inner-page { padding: var(--space-md) 1.25rem; }
+            .inner-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; margin-bottom: var(--space-md); }
+            .inner-title { font-size: 2.2rem; }
+            .service-block { padding: var(--space-md) 0; gap: var(--space-sm); }
+            .service-block-label h3 { font-size: 1.8rem; }
+            .service-includes { padding: 1.25rem; }
+
+            /* Pricing */
+            .pricing-grid { grid-template-columns: 1fr; }
+            .pricing-intro { font-size: 0.88rem; margin-bottom: var(--space-md); }
+            .price-amount { font-size: 2.8rem; }
+
+            /* Contact */
+            .contact-page { padding: var(--space-md) 1.25rem; }
+            .contact-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; margin-bottom: var(--space-md); }
+            .contact-title { font-size: 2.2rem; }
+            .contact-grid { gap: var(--space-md); }
+            .contact-footer-details { grid-template-columns: 1fr; }
             .form-row { grid-template-columns: 1fr; }
-            .contact-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .form-submit { width: 100%; text-align: center; }
+
+            /* Footer */
+            footer {
+                grid-template-columns: 1fr 1fr;
+                padding: var(--space-lg) 1.25rem var(--space-md);
+                gap: var(--space-md);
+            }
+        }
+
+        /* =====================
+           SMALL MOBILE (max 480px)
+        ===================== */
+        @media (max-width: 480px) {
+            .nav-brand { font-size: 0.75rem; }
+            .hero-title { font-size: 15vw; }
+            footer { grid-template-columns: 1fr; }
         }
     </style>
 </head>
