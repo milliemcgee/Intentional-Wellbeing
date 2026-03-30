@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intentional Wellbeing | Mobile Phlebotomy & Nutritional Therapy, Bath</title>
+
+    <!-- Favicon & Apple Touch Icon — blood drop SVG -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23050202'/%3E%3Cpath d='M50 10 C50 10 20 48 20 64 A30 30 0 0 0 80 64 C80 48 50 10 50 10Z' fill='%238E1B13'/%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAACXBIWXMAAAsTAAALEwEAmpwYAAAF0klEQVR4nO3BMQEAAADCoPVP7WsIoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAMBuAABHgAAAABJRU5ErkJggg==">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Vollkorn:wght@400;600&display=swap" rel="stylesheet">
@@ -25,7 +30,6 @@
             --space-md: 2rem;
             --space-lg: 4rem;
             --space-xl: 8rem;
-            /* Blood drop SVG as data URI — crimson fill */
             --bullet-drop: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 14' width='10' height='14'%3E%3Cpath d='M5 0 C5 0 0 6 0 9.5 A5 5 0 0 0 10 9.5 C10 6 5 0 5 0Z' fill='%238E1B13'/%3E%3C/svg%3E");
         }
         * { margin: 0; padding: 0; box-sizing: border-box; cursor: default; }
@@ -95,6 +99,54 @@
         .nav-link::after  { content: ']'; position: absolute; right: -12px; opacity: 0; transition: all 0.3s ease; color: var(--clr-crimson); }
         .nav-link:hover::before, .nav-link:hover::after { opacity: 1; }
 
+        /* HAMBURGER */
+        .nav-hamburger {
+            display: none; flex-direction: column; gap: 5px;
+            background: none; border: none; cursor: pointer;
+            padding: 4px; z-index: 200;
+        }
+        .nav-hamburger span {
+            display: block; width: 22px; height: 1px;
+            background: var(--clr-bone);
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+        .nav-hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+        .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+        .nav-hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+        /* MOBILE MENU DRAWER */
+        .mobile-menu {
+            display: none;
+            position: fixed; top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(5, 2, 2, 0.97);
+            backdrop-filter: blur(20px);
+            z-index: 150;
+            flex-direction: column;
+            align-items: center; justify-content: center;
+            gap: var(--space-lg);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .mobile-menu.open {
+            display: flex;
+            opacity: 1;
+        }
+        .mobile-menu-link {
+            font-family: var(--font-serif); font-size: 3rem;
+            color: var(--clr-bone); text-transform: uppercase;
+            background: none; border: none; cursor: pointer;
+            letter-spacing: 0.05em; line-height: 1;
+            transition: color 0.3s ease;
+        }
+        .mobile-menu-link:hover { color: var(--clr-gold); }
+        .mobile-menu-link.gold { color: var(--clr-gold); }
+        .mobile-menu-divider {
+            width: 40px; height: 1px;
+            background: rgba(142, 27, 19, 0.5);
+        }
+
         /* INNER PAGES */
         .inner-page {
             flex: 1; padding: var(--space-xl) var(--space-lg);
@@ -117,55 +169,39 @@
         }
         .service-block:last-of-type { border-bottom: none; }
         .service-block-label { padding-top: 0.3rem; }
-        .service-block-label .card-num {
-            position: static; display: block;
-            margin-bottom: var(--space-sm);
-        }
-        .service-block-label h3 {
-            font-size: 2.2rem; line-height: 1;
-            margin-bottom: var(--space-sm);
-        }
+        .service-block-label .card-num { position: static; display: block; margin-bottom: var(--space-sm); }
+        .service-block-label h3 { font-size: 2.2rem; line-height: 1; margin-bottom: var(--space-sm); }
         .service-block-label .mono-data { display: block; }
         .service-block-body { display: flex; flex-direction: column; gap: var(--space-md); }
         .service-block-body p {
             font-family: var(--font-mono); font-size: 0.92rem;
-            line-height: 1.9; color: var(--clr-body);
-            font-style: normal;
+            line-height: 1.9; color: var(--clr-body); font-style: normal;
         }
         .service-block-body p strong { color: var(--clr-bone); font-weight: 600; }
         .service-includes {
-            border: var(--border-subtle);
-            padding: var(--space-md);
+            border: var(--border-subtle); padding: var(--space-md);
             background: rgba(5, 2, 2, 0.4);
         }
-        .service-includes .mono-data {
-            display: block; margin-bottom: var(--space-sm);
-            color: var(--clr-crimson);
-        }
-        .service-includes ul {
-            list-style: none; display: flex; flex-direction: column; gap: 0.6rem;
-        }
+        .service-includes .mono-data { display: block; margin-bottom: var(--space-sm); color: var(--clr-crimson); }
+        .service-includes ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
         .service-includes ul li {
             font-family: var(--font-mono); font-size: 0.88rem;
             color: var(--clr-body); line-height: 1.7;
-            padding-left: 1.4rem; position: relative;
-            font-style: normal;
+            padding-left: 1.4rem; position: relative; font-style: normal;
         }
         .service-includes ul li::before {
             content: '';
             position: absolute; left: 0; top: 0.25rem;
             width: 9px; height: 12px;
             background-image: var(--bullet-drop);
-            background-repeat: no-repeat;
-            background-size: contain;
+            background-repeat: no-repeat; background-size: contain;
         }
 
         /* PRICING PAGE */
         .pricing-intro {
             font-family: var(--font-mono); font-size: 0.92rem;
             line-height: 1.9; color: var(--clr-body);
-            max-width: 680px; margin-bottom: var(--space-lg);
-            font-style: normal;
+            max-width: 680px; margin-bottom: var(--space-lg); font-style: normal;
         }
         .pricing-grid {
             display: grid; grid-template-columns: repeat(3, 1fr);
@@ -175,51 +211,34 @@
             border: var(--border-subtle); padding: var(--space-md);
             position: relative; background: rgba(5, 2, 2, 0.4);
             display: flex; flex-direction: column;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); overflow: hidden;
         }
         .pricing-card::before {
             content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
             background: linear-gradient(90deg, var(--clr-crimson), var(--clr-rust), transparent);
         }
-        .pricing-card:hover {
-            border-color: var(--clr-crimson);
-            background: rgba(75, 10, 18, 0.2);
-            transform: translateY(-4px);
-        }
+        .pricing-card:hover { border-color: var(--clr-crimson); background: rgba(75, 10, 18, 0.2); transform: translateY(-4px); }
         .pricing-card .card-num { position: static; display: block; margin-bottom: var(--space-sm); }
         .pricing-card h3 { font-size: 1.8rem; margin-bottom: var(--space-xs); }
         .pricing-card .mono-data { display: block; margin-bottom: var(--space-md); }
         .price-amount {
             font-size: 3.5rem; font-family: var(--font-serif);
-            color: var(--clr-gold); line-height: 1;
-            margin-bottom: var(--space-xs);
+            color: var(--clr-gold); line-height: 1; margin-bottom: var(--space-xs);
         }
-        .price-amount span {
-            font-size: 1.2rem; color: rgba(227, 210, 164, 0.5);
-            font-family: var(--font-mono);
-        }
+        .price-amount span { font-size: 1.2rem; color: rgba(227, 210, 164, 0.5); font-family: var(--font-mono); }
         .price-oneliner {
             font-family: var(--font-mono); font-size: 0.88rem;
             line-height: 1.7; color: var(--clr-body);
-            margin-bottom: var(--space-md); flex: 1;
-            font-style: normal;
+            margin-bottom: var(--space-md); flex: 1; font-style: normal;
         }
         .pricing-note {
-            border: var(--border-accent);
-            padding: var(--space-md);
+            border: var(--border-accent); padding: var(--space-md);
             background: rgba(75, 10, 18, 0.15);
             display: grid; grid-template-columns: auto 1fr;
             gap: var(--space-md); align-items: start;
         }
-        .pricing-note-icon {
-            font-size: 1.5rem; color: var(--clr-crimson); margin-top: 0.2rem;
-        }
-        .pricing-note p {
-            font-family: var(--font-mono); font-size: 0.88rem;
-            line-height: 1.8; color: var(--clr-body);
-            font-style: normal;
-        }
+        .pricing-note-icon { font-size: 1.5rem; color: var(--clr-crimson); margin-top: 0.2rem; }
+        .pricing-note p { font-family: var(--font-mono); font-size: 0.88rem; line-height: 1.8; color: var(--clr-body); font-style: normal; }
         .pricing-note p strong { color: var(--clr-bone); }
 
         /* PAGE SWITCHING */
@@ -229,22 +248,17 @@
         /* HERO */
         .hero {
             min-height: 90vh; display: flex; align-items: center;
-            border-bottom: var(--border-subtle); position: relative;
-            padding: var(--space-lg) 0;
+            border-bottom: var(--border-subtle); position: relative; padding: var(--space-lg) 0;
         }
         .hero-grid { width: 100%; height: 100%; }
         .hero-content {
             grid-column: 1 / 13;
-            display: flex; flex-direction: column; justify-content: center;
-            position: relative;
+            display: flex; flex-direction: column; justify-content: center; position: relative;
         }
         .hero-title { font-size: 7vw; margin-bottom: var(--space-md); letter-spacing: -0.02em; }
         .hero-desc {
-            font-size: 1.25rem; max-width: 60%; line-height: 1.5;
-            color: var(--clr-body);
-            border-left: 2px solid var(--clr-crimson);
-            padding-left: var(--space-md);
-            font-style: normal;
+            font-size: 1.25rem; max-width: 60%; line-height: 1.5; color: var(--clr-body);
+            border-left: 2px solid var(--clr-crimson); padding-left: var(--space-md); font-style: normal;
         }
         .crosshair { position: absolute; width: 15px; height: 15px; }
         .crosshair::before, .crosshair::after { content: ''; position: absolute; background: var(--clr-bone); opacity: 0.3; }
@@ -259,22 +273,15 @@
         .section-header {
             grid-column: 1 / -1; margin-bottom: var(--space-lg);
             display: flex; justify-content: space-between; align-items: flex-end;
-            border-bottom: 1px solid rgba(227, 210, 164, 0.3);
-            padding-bottom: var(--space-sm);
+            border-bottom: 1px solid rgba(227, 210, 164, 0.3); padding-bottom: var(--space-sm);
         }
         .section-title { font-size: 3rem; }
         .protocol-card {
-            grid-column: span 4;
-            border: var(--border-subtle); padding: var(--space-md);
-            position: relative; background: rgba(5, 2, 2, 0.4);
-            backdrop-filter: blur(5px);
+            grid-column: span 4; border: var(--border-subtle); padding: var(--space-md);
+            position: relative; background: rgba(5, 2, 2, 0.4); backdrop-filter: blur(5px);
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); overflow: hidden;
         }
-        .protocol-card:hover {
-            border-color: var(--clr-crimson);
-            background: rgba(75, 10, 18, 0.2);
-            transform: translateY(-5px);
-        }
+        .protocol-card:hover { border-color: var(--clr-crimson); background: rgba(75, 10, 18, 0.2); transform: translateY(-5px); }
         .protocol-card::before {
             content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
             background: linear-gradient(90deg, var(--clr-crimson), var(--clr-rust), transparent);
@@ -283,12 +290,7 @@
         .protocol-card:hover::before { transform: scaleX(1); }
         .card-num { position: absolute; top: 1rem; right: 1rem; font-family: var(--font-mono); color: var(--clr-crimson); font-size: 0.8rem; }
         .card-title { font-size: 1.8rem; margin: var(--space-md) 0 var(--space-sm); }
-        .card-desc {
-            font-family: var(--font-mono); font-size: 0.88rem;
-            line-height: 1.7; color: var(--clr-body);
-            margin-bottom: var(--space-md);
-            font-style: normal;
-        }
+        .card-desc { font-family: var(--font-mono); font-size: 0.88rem; line-height: 1.7; color: var(--clr-body); margin-bottom: var(--space-md); font-style: normal; }
         .btn-outline {
             display: inline-block; font-family: var(--font-mono); font-size: 0.7rem;
             text-transform: uppercase; text-decoration: none; color: var(--clr-bone);
@@ -308,20 +310,12 @@
             background: rgba(5, 2, 2, 0.8); backdrop-filter: blur(10px);
             z-index: 100; cursor: pointer; transition: all 0.5s ease;
         }
-        .booking-trigger:hover {
-            background: var(--clr-crimson); transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(142, 27, 19, 0.5); border-color: var(--clr-gold);
-        }
+        .booking-trigger:hover { background: var(--clr-crimson); transform: scale(1.05); box-shadow: 0 0 30px rgba(142, 27, 19, 0.5); border-color: var(--clr-gold); }
 
         /* CONTACT PAGE */
-        .contact-page {
-            flex: 1;
-            padding: var(--space-xl) var(--space-md);
-            display: flex; flex-direction: column;
-        }
+        .contact-page { flex: 1; padding: var(--space-xl) var(--space-md); display: flex; flex-direction: column; }
         .contact-header {
-            margin-bottom: var(--space-lg);
-            padding-bottom: var(--space-sm);
+            margin-bottom: var(--space-lg); padding-bottom: var(--space-sm);
             border-bottom: 1px solid rgba(227, 210, 164, 0.3);
             display: flex; justify-content: space-between; align-items: flex-end;
         }
@@ -330,38 +324,17 @@
             font-family: var(--font-mono); font-size: 0.7rem;
             text-transform: uppercase; letter-spacing: 0.1em;
             color: rgba(227, 210, 164, 0.6); cursor: pointer;
-            background: none; border: none;
-            transition: color 0.3s ease;
+            background: none; border: none; transition: color 0.3s ease;
         }
         .back-btn:hover { color: var(--clr-gold); }
         .back-btn::before { content: '← '; }
-        .contact-grid {
-            display: flex; flex-direction: column;
-            gap: var(--space-lg); flex: 1;
-            max-width: 780px;
-        }
-        .contact-info p {
-            font-family: var(--font-mono); font-size: 0.92rem;
-            line-height: 1.9; color: var(--clr-body);
-            margin-bottom: 0; font-style: normal;
-        }
+        .contact-grid { display: flex; flex-direction: column; gap: var(--space-lg); flex: 1; max-width: 780px; }
+        .contact-info p { font-family: var(--font-mono); font-size: 0.92rem; line-height: 1.9; color: var(--clr-body); margin-bottom: 0; font-style: normal; }
         .contact-info a { color: var(--clr-body); text-decoration: none; cursor: pointer; }
         .contact-info a:hover { color: var(--clr-gold); }
-        .info-label {
-            display: block; margin-bottom: var(--space-sm);
-            color: var(--clr-crimson) !important;
-        }
-        .contact-footer-details {
-            display: grid; grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-md);
-            padding-top: var(--space-md);
-            border-top: var(--border-subtle);
-        }
-        .contact-footer-details p {
-            font-family: var(--font-mono); font-size: 0.88rem;
-            line-height: 1.8; color: var(--clr-body);
-            font-style: normal;
-        }
+        .info-label { display: block; margin-bottom: var(--space-sm); color: var(--clr-crimson) !important; }
+        .contact-footer-details { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); padding-top: var(--space-md); border-top: var(--border-subtle); }
+        .contact-footer-details p { font-family: var(--font-mono); font-size: 0.88rem; line-height: 1.8; color: var(--clr-body); font-style: normal; }
         .contact-footer-details a { color: var(--clr-body); text-decoration: none; cursor: pointer; }
         .contact-footer-details a:hover { color: var(--clr-gold); }
 
@@ -369,50 +342,27 @@
         .contact-form { display: flex; flex-direction: column; gap: 1.5rem; }
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
         .field { display: flex; flex-direction: column; gap: 0.5rem; }
-        .field label {
-            font-family: var(--font-mono); font-size: 0.65rem;
-            text-transform: uppercase; letter-spacing: 0.1em;
-            color: rgba(227, 210, 164, 0.5);
-        }
-        .field input,
-        .field select,
-        .field textarea {
-            background: rgba(227, 210, 164, 0.04);
-            border: var(--border-subtle);
-            color: var(--clr-bone);
-            font-family: var(--font-mono); font-size: 0.88rem;
-            padding: 0.75rem 1rem;
-            outline: none;
-            transition: border-color 0.3s ease;
-            cursor: text;
-            width: 100%;
-            -webkit-appearance: none; appearance: none;
+        .field label { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(227, 210, 164, 0.5); }
+        .field input, .field select, .field textarea {
+            background: rgba(227, 210, 164, 0.04); border: var(--border-subtle);
+            color: var(--clr-bone); font-family: var(--font-mono); font-size: 0.88rem;
+            padding: 0.75rem 1rem; outline: none; transition: border-color 0.3s ease;
+            cursor: text; width: 100%; -webkit-appearance: none; appearance: none;
         }
         .field select { cursor: pointer; }
-        .field input:focus,
-        .field select:focus,
-        .field textarea:focus { border-color: var(--clr-crimson); }
+        .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--clr-crimson); }
         .field textarea { resize: vertical; min-height: 130px; }
         .field select option { background: #0d0404; color: var(--clr-bone); }
-        .field input::placeholder,
-        .field textarea::placeholder { color: rgba(207, 196, 163, 0.35); }
+        .field input::placeholder, .field textarea::placeholder { color: rgba(207, 196, 163, 0.35); }
         .form-submit {
             display: inline-block; font-family: var(--font-mono); font-size: 0.7rem;
             text-transform: uppercase; letter-spacing: 0.1em;
             color: var(--clr-bone); border: 1px solid var(--clr-crimson);
-            padding: 1rem 2rem; background: none;
-            transition: all 0.3s ease; cursor: pointer; align-self: flex-start;
+            padding: 1rem 2rem; background: none; transition: all 0.3s ease;
+            cursor: pointer; align-self: flex-start;
         }
-        .form-submit:hover {
-            background: var(--clr-crimson); color: var(--clr-bone);
-            box-shadow: 0 0 20px rgba(142, 27, 19, 0.4);
-        }
-        .form-success {
-            display: none;
-            font-family: var(--font-mono); font-size: 0.88rem;
-            color: var(--clr-gold); letter-spacing: 0.05em;
-            padding: 1rem; border: 1px solid rgba(237, 158, 63, 0.4);
-        }
+        .form-submit:hover { background: var(--clr-crimson); color: var(--clr-bone); box-shadow: 0 0 20px rgba(142, 27, 19, 0.4); }
+        .form-success { display: none; font-family: var(--font-mono); font-size: 0.88rem; color: var(--clr-gold); letter-spacing: 0.05em; padding: 1rem; border: 1px solid rgba(237, 158, 63, 0.4); }
 
         /* FOOTER */
         footer {
@@ -422,16 +372,12 @@
             gap: var(--space-md); background: #000;
         }
         .footer-col .mono-data { margin-bottom: 1rem; display: block; color: var(--clr-crimson); }
-        .footer-col p {
-            font-family: var(--font-mono); font-size: 0.88rem;
-            line-height: 1.8; color: var(--clr-body);
-            font-style: normal;
-        }
+        .footer-col p { font-family: var(--font-mono); font-size: 0.88rem; line-height: 1.8; color: var(--clr-body); font-style: normal; }
         .footer-col a { color: var(--clr-body); text-decoration: none; cursor: pointer; }
         .footer-col a:hover { color: var(--clr-gold); }
 
         /* =====================
-           TABLET (max 1024px)
+           TABLET
         ===================== */
         @media (max-width: 1024px) {
             .inner-page { padding: var(--space-lg) var(--space-md); }
@@ -446,12 +392,14 @@
         }
 
         /* =====================
-           MOBILE (max 768px)
+           MOBILE
         ===================== */
         @media (max-width: 768px) {
             /* Nav */
             .nav-brand { font-size: 0.85rem; letter-spacing: 0.03em; }
             .nav-link { display: none; }
+            .nav-book { display: none; }
+            .nav-hamburger { display: flex; }
             nav { padding: 0.75rem 1.25rem; }
 
             /* Hide floating book button on mobile */
@@ -463,7 +411,7 @@
             .hero-desc { font-size: 1rem; max-width: 100%; padding-left: var(--space-sm); }
             .grid-container { padding: 0 1.25rem; }
 
-            /* Protocols section */
+            /* Protocols */
             .protocols { padding: var(--space-lg) 0; }
             .protocols.grid-container { padding-left: 1.25rem; padding-right: 1.25rem; }
             .protocol-card { grid-column: span 12; }
@@ -477,7 +425,7 @@
             .service-block-label h3 { font-size: 1.8rem; }
             .service-includes { padding: 1.25rem; }
 
-            /* Pricing — one per row, full width */
+            /* Pricing */
             .pricing-grid { grid-template-columns: 1fr; gap: var(--space-sm); }
             .pricing-intro { font-size: 0.88rem; margin-bottom: var(--space-md); }
             .price-amount { font-size: 2.8rem; }
@@ -492,16 +440,9 @@
             .form-submit { width: 100%; text-align: center; }
 
             /* Footer */
-            footer {
-                grid-template-columns: 1fr 1fr;
-                padding: var(--space-lg) 1.25rem var(--space-md);
-                gap: var(--space-md);
-            }
+            footer { grid-template-columns: 1fr 1fr; padding: var(--space-lg) 1.25rem var(--space-md); gap: var(--space-md); }
         }
 
-        /* =====================
-           SMALL MOBILE (max 480px)
-        ===================== */
         @media (max-width: 480px) {
             .nav-brand { font-size: 0.75rem; }
             .hero-title { font-size: 15vw; }
@@ -520,7 +461,21 @@
             <button class="nav-link" onclick="showPage('pricing')">Pricing</button>
             <button class="nav-book" onclick="showPage('contact')">Book Now</button>
         </div>
+        <button class="nav-hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="mobile-menu-link" onclick="showPage('home'); toggleMenu()">Home</button>
+        <div class="mobile-menu-divider"></div>
+        <button class="mobile-menu-link" onclick="showPage('services'); toggleMenu()">Services</button>
+        <div class="mobile-menu-divider"></div>
+        <button class="mobile-menu-link" onclick="showPage('pricing'); toggleMenu()">Pricing</button>
+        <div class="mobile-menu-divider"></div>
+        <button class="mobile-menu-link gold" onclick="showPage('contact'); toggleMenu()">Book Now</button>
+    </div>
 
     <!-- HOME PAGE -->
     <div class="page active" id="page-home">
@@ -542,7 +497,6 @@
                     <h2 class="section-title">Services</h2>
                     <span class="mono-data">[ SELECT YOUR SERVICE ]</span>
                 </div>
-
                 <div class="protocol-card">
                     <span class="card-num">SEQ.01</span>
                     <span class="mono-data">PHLEBOTOMY // MOBILE</span>
@@ -553,7 +507,6 @@
                         <button class="btn-outline" onclick="showPage('contact')">Enquire</button>
                     </div>
                 </div>
-
                 <div class="protocol-card">
                     <span class="card-num">SEQ.02</span>
                     <span class="mono-data">FUNCTIONAL // ANALYSIS</span>
@@ -564,7 +517,6 @@
                         <button class="btn-outline" onclick="showPage('contact')">Enquire</button>
                     </div>
                 </div>
-
                 <div class="protocol-card">
                     <span class="card-num">SEQ.03</span>
                     <span class="mono-data">NUTRITION // FULL PROTOCOL</span>
@@ -600,9 +552,7 @@
             </div>
         </footer>
 
-        <div class="booking-trigger" onclick="showPage('contact')">
-            Book<br>Now
-        </div>
+        <div class="booking-trigger" onclick="showPage('contact')">Book<br>Now</div>
     </div>
 
     <!-- CONTACT PAGE -->
@@ -615,13 +565,11 @@
                 </div>
                 <button class="back-btn" onclick="showPage('home')">Back to main</button>
             </div>
-
             <div class="contact-grid">
                 <div class="contact-info">
                     <span class="mono-data info-label">What to expect</span>
                     <p>Fill out the form and I will be in touch within 48 hours to discuss your requirements and confirm availability.</p>
                 </div>
-
                 <form class="contact-form" name="contact" method="POST" data-netlify="true" onsubmit="handleSubmit(event)">
                     <input type="hidden" name="form-name" value="contact">
                     <div class="form-row">
@@ -659,18 +607,12 @@
                         <textarea id="message" name="message" placeholder="Tell me a little about what you're looking for, any relevant health context, or questions you may have..."></textarea>
                     </div>
                     <button type="submit" class="form-submit">Submit Request →</button>
-                    <div class="form-success" id="form-success">
-                        ✦ &nbsp;Request received. I will be in touch within 48 hours.
-                    </div>
+                    <div class="form-success" id="form-success">✦ &nbsp;Request received. I will be in touch within 48 hours.</div>
                 </form>
-
                 <div class="contact-footer-details">
                     <div>
                         <span class="mono-data info-label">Contact</span>
-                        <p>
-                            <a href="mailto:millielmcgee@gmail.com">millielmcgee@gmail.com</a><br>
-                            <a href="tel:07549955347">07549 955 347</a>
-                        </p>
+                        <p><a href="mailto:millielmcgee@gmail.com">millielmcgee@gmail.com</a><br><a href="tel:07549955347">07549 955 347</a></p>
                     </div>
                     <div>
                         <span class="mono-data info-label">Service Area</span>
@@ -695,8 +637,6 @@
                 </div>
                 <button class="back-btn" onclick="showPage('home')">Back to main</button>
             </div>
-
-            <!-- SEQ.01 -->
             <div class="service-block">
                 <div class="service-block-label">
                     <span class="card-num">SEQ.01</span>
@@ -718,8 +658,6 @@
                     <button class="btn-outline" onclick="showPage('contact')" style="align-self: flex-start;">Enquire →</button>
                 </div>
             </div>
-
-            <!-- SEQ.02 -->
             <div class="service-block">
                 <div class="service-block-label">
                     <span class="card-num">SEQ.02</span>
@@ -741,8 +679,6 @@
                     <button class="btn-outline" onclick="showPage('contact')" style="align-self: flex-start;">Enquire →</button>
                 </div>
             </div>
-
-            <!-- SEQ.03 -->
             <div class="service-block">
                 <div class="service-block-label">
                     <span class="card-num">SEQ.03</span>
@@ -763,7 +699,6 @@
                     <button class="btn-outline" onclick="showPage('contact')" style="align-self: flex-start;">Enquire →</button>
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -777,11 +712,9 @@
                 </div>
                 <button class="back-btn" onclick="showPage('home')">Back to main</button>
             </div>
-
             <p class="pricing-intro">
                 All services are priced transparently below. Mobile visits within BA1 and BA2 are included as standard — parking must be available at the time of your appointment. Travel to postcodes outside of this area is quoted separately once your location has been confirmed.
             </p>
-
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <span class="card-num">SEQ.01</span>
@@ -791,7 +724,6 @@
                     <p class="price-oneliner">Prices start at £60. Test kit required. Bring your own, or have your practitioner arrange one. Centrifuge tests from £85.</p>
                     <button class="btn-outline" onclick="showPage('contact')">Book Now</button>
                 </div>
-
                 <div class="pricing-card">
                     <span class="card-num">SEQ.02</span>
                     <h3>Draw &amp; Interpret</h3>
@@ -800,7 +732,6 @@
                     <p class="price-oneliner">From £160 + test cost. I can order your appropriate test or you can purchase directly from the lab if preferred and have ready for the draw.</p>
                     <button class="btn-outline" onclick="showPage('contact')">Book Now</button>
                 </div>
-
                 <div class="pricing-card">
                     <span class="card-num">SEQ.03</span>
                     <h3>Nutritional Therapy</h3>
@@ -810,14 +741,10 @@
                     <button class="btn-outline" onclick="showPage('contact')">Book Now</button>
                 </div>
             </div>
-
             <div class="pricing-note">
                 <div class="pricing-note-icon">✦</div>
-                <p>
-                    <strong>Travel outside BA1 &amp; BA2 —</strong> Mobile visits to postcodes beyond Bath city centre are warmly welcomed and priced individually based on travel time and distance. Please get in touch with your postcode and I will provide a quote alongside your service fee.
-                </p>
+                <p><strong>Travel outside BA1 &amp; BA2 —</strong> Mobile visits to postcodes beyond Bath city centre are warmly welcomed and priced individually based on travel time and distance. Please get in touch with your postcode and I will provide a quote alongside your service fee.</p>
             </div>
-
         </div>
     </div>
 
@@ -830,12 +757,26 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    function toggleMenu() {
+        var menu = document.getElementById('mobile-menu');
+        var burger = document.getElementById('hamburger');
+        var isOpen = menu.classList.contains('open');
+        if (isOpen) {
+            menu.classList.remove('open');
+            burger.classList.remove('open');
+            document.body.style.overflow = '';
+        } else {
+            menu.classList.add('open');
+            burger.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
     function handleSubmit(e) {
         e.preventDefault();
         var form = e.target;
         var success = document.getElementById('form-success');
         var btn = form.querySelector('.form-submit');
-
         fetch('/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -845,10 +786,7 @@
             success.style.display = 'block';
             btn.style.display = 'none';
             form.reset();
-            setTimeout(function() {
-                success.style.display = 'none';
-                btn.style.display = 'inline-block';
-            }, 5000);
+            setTimeout(function() { success.style.display = 'none'; btn.style.display = 'inline-block'; }, 5000);
         })
         .catch(function() {
             alert('Something went wrong — please try emailing millielmcgee@gmail.com directly.');
@@ -869,41 +807,27 @@
     ].join('\n');
 
     var fragmentShader = [
-        'uniform float u_time;',
-        'uniform vec2 u_resolution;',
-        'varying vec2 vUv;',
+        'uniform float u_time;','uniform vec2 u_resolution;','varying vec2 vUv;',
         'vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }',
         'vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }',
         'vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x); }',
         'float snoise(vec2 v) {',
         '    const vec4 C = vec4(0.211324865405187, 0.366025403784439, -0.577350269189626, 0.024390243902439);',
-        '    vec2 i  = floor(v + dot(v, C.yy));',
-        '    vec2 x0 = v - i + dot(i, C.xx);',
+        '    vec2 i  = floor(v + dot(v, C.yy));','    vec2 x0 = v - i + dot(i, C.xx);',
         '    vec2 i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);',
-        '    vec4 x12 = x0.xyxy + C.xxzz;',
-        '    x12.xy -= i1;',
-        '    i = mod289(i);',
+        '    vec4 x12 = x0.xyxy + C.xxzz;','    x12.xy -= i1;','    i = mod289(i);',
         '    vec3 p = permute(permute(i.y + vec3(0.0, i1.y, 1.0)) + i.x + vec3(0.0, i1.x, 1.0));',
         '    vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);',
-        '    m = m*m; m = m*m;',
-        '    vec3 x = 2.0 * fract(p * C.www) - 1.0;',
-        '    vec3 h = abs(x) - 0.5;',
-        '    vec3 ox = floor(x + 0.5);',
-        '    vec3 a0 = x - ox;',
+        '    m = m*m; m = m*m;','    vec3 x = 2.0 * fract(p * C.www) - 1.0;',
+        '    vec3 h = abs(x) - 0.5;','    vec3 ox = floor(x + 0.5);','    vec3 a0 = x - ox;',
         '    m *= 1.79284291400159 - 0.85373472095314 * (a0*a0 + h*h);',
-        '    vec3 g;',
-        '    g.x  = a0.x  * x0.x  + h.x  * x0.y;',
-        '    g.yz = a0.yz * x12.xz + h.yz * x12.yw;',
-        '    return 130.0 * dot(m, g);',
-        '}',
-        'float fbm(vec2 st) {',
-        '    float value = 0.0; float amplitude = 0.5;',
+        '    vec3 g;','    g.x  = a0.x  * x0.x  + h.x  * x0.y;',
+        '    g.yz = a0.yz * x12.xz + h.yz * x12.yw;','    return 130.0 * dot(m, g);','}',
+        'float fbm(vec2 st) {','    float value = 0.0; float amplitude = 0.5;',
         '    for (int i = 0; i < 5; i++) { value += amplitude * snoise(st); st *= 2.0; amplitude *= 0.5; }',
-        '    return value;',
-        '}',
+        '    return value;','}',
         'void main() {',
-        '    vec2 st = gl_FragCoord.xy / u_resolution.xy;',
-        '    st.x *= u_resolution.x / u_resolution.y;',
+        '    vec2 st = gl_FragCoord.xy / u_resolution.xy;','    st.x *= u_resolution.x / u_resolution.y;',
         '    vec2 q = vec2(fbm(st + 0.001 * u_time), fbm(st + vec2(1.0)));',
         '    vec2 r = vec2(fbm(st + 1.0*q + vec2(1.7,9.2) + 0.05*u_time), fbm(st + 1.0*q + vec2(8.3,2.8) + 0.026*u_time));',
         '    float f = fbm(st + r);',
@@ -916,28 +840,17 @@
         '    color = mix(color, col_rust, clamp(length(r.x), 0.0, 1.0) * 0.5);',
         '    float dist = length(vUv - vec2(0.5));',
         '    color *= smoothstep(0.8, 0.2, dist * 1.2);',
-        '    gl_FragColor = vec4(color, 1.0);',
-        '}'
+        '    gl_FragColor = vec4(color, 1.0);','}'
     ].join('\n');
 
-    var uniforms = {
-        u_time: { value: 0.0 },
-        u_resolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) }
-    };
+    var uniforms = { u_time: { value: 0.0 }, u_resolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) } };
     var material = new THREE.ShaderMaterial({ vertexShader: vertexShader, fragmentShader: fragmentShader, uniforms: uniforms, depthWrite: false, depthTest: false });
     var mesh = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), material);
     scene.add(mesh);
     var clock = new THREE.Clock();
-    function animate() {
-        requestAnimationFrame(animate);
-        uniforms.u_time.value = clock.getElapsedTime() * 0.5;
-        renderer.render(scene, camera);
-    }
+    function animate() { requestAnimationFrame(animate); uniforms.u_time.value = clock.getElapsedTime() * 0.5; renderer.render(scene, camera); }
     animate();
-    window.addEventListener('resize', function() {
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        uniforms.u_resolution.value.set(window.innerWidth, window.innerHeight);
-    });
+    window.addEventListener('resize', function() { renderer.setSize(window.innerWidth, window.innerHeight); uniforms.u_resolution.value.set(window.innerWidth, window.innerHeight); });
 </script>
 </body>
 </html>
